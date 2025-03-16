@@ -964,8 +964,7 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
         if violations:
             # Display violations in a grid
             st.markdown('<div style="margin-top: 1.5rem;">', unsafe_allow_html=True)
-            
-            # Display in 2 columns
+                        # Display in 2 columns
             num_cols = 2
             for i in range(0, len(violations), num_cols):
                 cols = st.columns(num_cols)
@@ -992,6 +991,7 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
                                     <div class="violation-detail"><strong>Location:</strong> {violation['location'] or 'Not specified'}</div>
                                     <div class="violation-detail"><strong>Severity:</strong> <span class="{severity_class}">{(violation['severity'] or 'Unknown').upper()}</span></div>
                                     <div class="violation-detail"><strong>Recommendation:</strong> {violation['recommendation'] or 'No recommendation available'}</div>
+                                    <div class="violation-detail"><strong>Video:</strong> {violation['video_name']}</div>
                                 </div>
                                 """, unsafe_allow_html=True)
             

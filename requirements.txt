@@ -1,0 +1,7 @@
+streamlit>=1.26.0
+pandas
+sqlite3
+pillow
+plotly
+opencv-python
+requests

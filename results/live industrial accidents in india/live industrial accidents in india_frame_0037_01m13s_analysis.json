@@ -1,0 +1,47 @@
+{
+  "violations": [
+    "Missing hard hat",
+    "Improper equipment usage",
+    "Workers in dangerous positions"
+  ],
+  "locations": [
+    "Worker near the machine on the right",
+    "Inside the machine enclosure",
+    "Worker crouching next to machinery"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing hard hats",
+    "Provide training on proper machine usage",
+    "Ensure workers maintain safe positions and distances from machinery"
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker standing at a machine on the right",
+    "One worker crouching near the machinery in the middle"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_1",
+      "features": "worker in a blue shirt operating machine",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_pink_shirt_2",
+      "features": "worker in a pink shirt crouching",
+      "violations": [
+        0,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0037_01m13s.jpg",
+  "timestamp": "2025-03-16T14:12:17.185910"
+}

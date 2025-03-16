@@ -1,0 +1,68 @@
+{
+  "violations": [
+    {
+      "description": "Workers missing PPE - hard hats and vests",
+      "location": "Workers near the left side machinery",
+      "severity": "high",
+      "recommendation": "Ensure all workers are equipped with appropriate PPE including hard hats and vests."
+    },
+    {
+      "description": "Worker in potentially dangerous position near active machinery",
+      "location": "Worker in front of large machine near center",
+      "severity": "high",
+      "recommendation": "Maintain a safe distance from active machinery and ensure proper fencing is in place."
+    },
+    {
+      "description": "Improper equipment usage - Open machinery panel",
+      "location": "Front of the machine on the right side",
+      "severity": "medium",
+      "recommendation": "Ensure all machinery panels are properly closed and secure during operation."
+    }
+  ],
+  "locations": [
+    "Left side near large machinery",
+    "Center near large machine",
+    "Right side near active machinery panel"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are equipped with appropriate PPE including hard hats and vests.",
+    "Maintain a safe distance from active machinery and ensure proper fencing is in place.",
+    "Ensure all machinery panels are properly closed and secure during operation."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Two workers standing on the left side near machinery",
+    "One worker near front of right side machine"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "blue shirt, no helmet, near left side machinery",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_no_shirt_no_helmet",
+      "features": "no shirt, no helmet, near left side machinery",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_darker_clothes_no_helmet",
+      "features": "darker clothes, no helmet, near right side machine",
+      "violations": [
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0009_00m17s.jpg",
+  "timestamp": "2025-03-16T14:12:44.920458"
+}

@@ -1,0 +1,63 @@
+{
+  "violations": [
+    "Missing hard hats",
+    "Missing safety vests",
+    "Worker next to active machinery without PPE",
+    "Improper stacking of materials"
+  ],
+  "locations": [
+    "Throughout the site",
+    "Throughout the site",
+    "Near the large machine on the right",
+    "In front of the large machine on the right"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times on site.",
+    "Require safety vests for visibility.",
+    "Ensure workers are equipped with full PPE when near active machinery.",
+    "Organize and secure stacked materials to prevent tripping or falling hazards."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Near the left side of the site by a machine",
+    "Walking across the center",
+    "Operating the machine on the right side"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_shirtless_near_left_machine",
+      "features": "shirtless, near left machinery",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_blue_shirt_center",
+      "features": "blue shirt, walking in center",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_operating_machine_right",
+      "features": "operating machine on right side",
+      "violations": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0017_00m33s.jpg",
+  "timestamp": "2025-03-16T14:05:11.344253"
+}

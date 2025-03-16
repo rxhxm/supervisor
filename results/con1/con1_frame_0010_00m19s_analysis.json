@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Workers not wearing hard hats",
+    "Cluttered work area with debris",
+    "Improper equipment storage"
+  ],
+  "locations": [
+    "Workers near the bottom of the image",
+    "Central area of the site",
+    "Right side of the site"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing hard hats at all times on site.",
+    "Clear debris and organize the work area to prevent tripping hazards.",
+    "Properly store equipment to prevent obstruction and maintain safe pathways."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0010_00m19s.jpg",
+  "timestamp": "2025-03-16T01:43:18.129050"
+}

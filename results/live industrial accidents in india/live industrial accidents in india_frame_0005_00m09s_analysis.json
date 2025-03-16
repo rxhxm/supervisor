@@ -1,0 +1,62 @@
+{
+  "violations": [
+    "Missing hard hats",
+    "Missing safety vests",
+    "Worker in proximity to operating machine without visible safety measures",
+    "General clutter that could block pathways"
+  ],
+  "locations": [
+    "Throughout the visible workshop area",
+    "Near the large machine in the upper left",
+    "Floor area near the large CNC machine"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times in the work area.",
+    "Provide and require the use of high-visibility safety vests for all workers.",
+    "Ensure workers near operating machinery wear appropriate PPE and follow proper safety protocols.",
+    "Clear the floor of unnecessary items and organize equipment to keep pathways clear."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker near the large machine in upper left",
+    "One worker operating CNC machine",
+    "One worker standing near bottom right corner"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, no hard hat or vest",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_white_shirt_clutter_area",
+      "features": "White shirt, near clutter",
+      "violations": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "worker_id": "worker_black_shirt_operating_machine",
+      "features": "Black shirt, operating machine",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0005_00m09s.jpg",
+  "timestamp": "2025-03-16T14:11:36.192418"
+}

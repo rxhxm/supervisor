@@ -1,0 +1,49 @@
+{
+  "violations": [
+    "Missing PPE: Workers without hard hats",
+    "Improper equipment usage: Worker transporting large coil unsafely",
+    "Blocked emergency exits or pathways: Pathways obstructed by metal coils"
+  ],
+  "locations": [
+    "Throughout the construction site",
+    "Worker with the metal coil in the center",
+    "Pathway blocked by coils on the right side"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE, including hard hats and safety vests",
+    "Use proper equipment and techniques for transporting heavy items",
+    "Clear pathways to ensure quick and safe emergency exits"
+  ],
+  "worker_count": 7,
+  "worker_positions": [
+    "Center with metal coil",
+    "Near left wall walking towards the back",
+    "Foreground near the coils",
+    "Two workers in the background near the entrance",
+    "Two workers moving around the stacks of coils"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_ppe_1",
+      "features": "No hard hat, middle of the image with metal coil",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_2",
+      "features": "No hard hat, near left wall walking towards the back",
+      "violations": [
+        0
+      ]
+    }
+  ],
+  "image_path": "data/frames/videoplayback/videoplayback_frame_0003_00m05s.jpg",
+  "timestamp": "2025-03-16T14:42:00.141114"
+}

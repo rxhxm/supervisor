@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Missing PPE: Worker not wearing a hard hat",
+    "Improper equipment usage: Materials scattered haphazardly",
+    "Blocked emergency pathways: Pathways cluttered with construction materials"
+  ],
+  "locations": [
+    "Center of the image - worker visible on the ground",
+    "Throughout the site - construction materials scattered",
+    "Across the site - pathways obstructed by materials"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE including hard hats.",
+    "Organize and secure materials to prevent accidents.",
+    "Clear pathways of all obstructions to ensure safe egress or movement."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0007_00m13s.jpg",
+  "timestamp": "2025-03-16T01:42:34.359427"
+}

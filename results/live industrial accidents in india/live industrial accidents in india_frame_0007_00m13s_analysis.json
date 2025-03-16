@@ -1,0 +1,51 @@
+{
+  "violations": [
+    "Missing PPE: No hard hats or visible gloves",
+    "Workers in dangerous positions: Worker leaning inside machinery",
+    "Improper equipment usage: Machine left open",
+    "Cluttered pathways: Equipment and materials blocking walkways"
+  ],
+  "locations": [
+    "Throughout the image",
+    "Center, near large machinery",
+    "Right side of image, open machine",
+    "Front center, near CNC machine"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE including hard hats and gloves.",
+    "Prevent workers from leaning into operational machinery; implement safety barriers.",
+    "Close machinery when not in active use to prevent accidents.",
+    "Clear pathways and organize materials to allow safe movement."
+  ],
+  "worker_count": 5,
+  "worker_positions": [
+    "Two workers near left standing machinery",
+    "One worker leaning into open machine on the right",
+    "Two workers near stacks of materials"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, no helmet, near left machinery",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_leaning_machine",
+      "features": "Inside machinery, no visible PPE",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0007_00m13s.jpg",
+  "timestamp": "2025-03-16T14:09:22.875669"
+}

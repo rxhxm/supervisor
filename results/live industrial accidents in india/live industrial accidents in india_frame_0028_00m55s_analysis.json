@@ -1,0 +1,48 @@
+{
+  "violations": [
+    "Missing PPE: Hard hats not visible on workers near machinery.",
+    "Workers in dangerous positions: Worker bending near active machine.",
+    "Improper equipment usage: Open machine with worker operating without visible PPE."
+  ],
+  "locations": [
+    "Near the large green machine on the left side of the image.",
+    "Worker bending near the green machine in the center.",
+    "Worker standing/squatting near the open control panel on the right."
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times around machinery.",
+    "Workers should avoid bending near active machines without proper clearance and PPE.",
+    "Ensure machines are operated with all required PPE and guards in place."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Worker on left near green machine bending down.",
+    "Worker on right standing/squatting at the open control panel.",
+    "Partially visible worker seated or kneeling near left center."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt",
+      "features": "blue shirt, bending near green machine",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_dark_vest",
+      "features": "dark vest, standing at control panel",
+      "violations": [
+        "0",
+        "2"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0028_00m55s.jpg",
+  "timestamp": "2025-03-16T14:07:46.370554"
+}

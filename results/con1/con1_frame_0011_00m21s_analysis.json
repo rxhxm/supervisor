@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Missing PPE",
+    "Workers in dangerous positions",
+    "Improper equipment usage"
+  ],
+  "locations": [
+    "Several workers in the foreground are not wearing hard hats or gloves.",
+    "Workers are near scattered debris, which poses a trip hazard in the center of the site.",
+    "Loose materials and equipment are strewn across the working area."
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing appropriate PPE including hard hats and gloves.",
+    "Clear up the debris and organize materials to prevent trips and falls.",
+    "Store equipment and materials properly to maintain a safe working environment."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0011_00m21s.jpg",
+  "timestamp": "2025-03-16T01:43:44.489265"
+}

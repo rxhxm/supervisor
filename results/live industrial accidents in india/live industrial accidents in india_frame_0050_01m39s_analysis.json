@@ -1,0 +1,53 @@
+{
+  "violations": [
+    "Missing PPE: Worker without a hard hat",
+    "Missing PPE: Worker without gloves",
+    "Workers in dangerous positions: Worker standing close to active machinery",
+    "Improper equipment usage: Machine area has clutter"
+  ],
+  "locations": [
+    "Near the machine on the right side",
+    "Near the machine center of the image",
+    "Near the machine left side",
+    "Near the machine center of the image"
+  ],
+  "severity": [
+    "medium",
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats when near machinery.",
+    "Require workers to wear gloves to prevent hand injuries.",
+    "Implement safe distance protocols from active machines.",
+    "Keep the work areas around machines clear of clutter."
+  ],
+  "worker_count": 5,
+  "worker_positions": [
+    "Worker interacting with the control panel on the right",
+    "Two workers near the center machine, facing each other",
+    "Worker sitting near center, in front of the machine",
+    "Worker on left side, bending over equipment"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "blue shirt, standing at control panel",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_white_shirt_near_machine",
+      "features": "white shirt, interacting with machine",
+      "violations": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0050_01m39s.jpg",
+  "timestamp": "2025-03-16T14:10:46.263286"
+}

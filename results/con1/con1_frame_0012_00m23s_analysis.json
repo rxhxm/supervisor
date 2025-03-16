@@ -1,0 +1,27 @@
+{
+  "violations": [
+    "Workers not wearing hard hats",
+    "Workers not wearing high-visibility vests",
+    "Debris scattered across the ground",
+    "Workers climbing on unstable materials"
+  ],
+  "locations": [
+    "Throughout the construction site",
+    "Center of the image",
+    "Left side near stacked materials"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times to prevent head injuries.",
+    "Require the use of high-visibility vests to increase visibility and decrease accident risks.",
+    "Clear debris to prevent trip hazards and maintain clear pathways.",
+    "Use ladders or secure platforms instead of climbing on materials to prevent falls."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0012_00m23s.jpg",
+  "timestamp": "2025-03-16T01:43:35.495556"
+}

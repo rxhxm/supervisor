@@ -1,0 +1,48 @@
+{
+  "violations": [
+    {
+      "violation": "Missing PPE - no hard hats or vests",
+      "locations": "Both workers at equipment",
+      "severity": "high",
+      "recommendations": "Ensure all workers wear hard hats and high-visibility vests."
+    },
+    {
+      "violation": "Workers in potentially dangerous positions",
+      "locations": "Worker bending at the machine",
+      "severity": "medium",
+      "recommendations": "Provide training on safe work postures and ensure they are followed."
+    }
+  ],
+  "locations": [
+    "Both workers are near the larger machine towards the right of the image."
+  ],
+  "severity": "high",
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE such as hard hats and vests.",
+    "Provide training on safe working postures."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "Worker standing at the machine on the right.",
+    "Worker bending near the machine in the center."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt",
+      "features": "wearing a blue shirt, standing at the machine",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_grey_top",
+      "features": "wearing a grey top, bending at the machine",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0036_01m11s.jpg",
+  "timestamp": "2025-03-16T14:10:54.979422"
+}

@@ -1,0 +1,49 @@
+{
+  "violations": [
+    "Worker without hard hat",
+    "Worker without high-visibility vest",
+    "Worker in proximity to operating machines without proper barriers",
+    "Debris blocking pathway"
+  ],
+  "locations": [
+    "Near large green machinery at back",
+    "Throughout the workspace",
+    "Adjacent to the large white machine on the right",
+    "Near the center of the image; debris around the stacked parts"
+  ],
+  "severity": [
+    "medium",
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times",
+    "Provide high-visibility vests for all workers",
+    "Install protective barriers or maintain a safe distance from operating machinery",
+    "Clear pathways of debris to ensure safe movement"
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker is near the large machinery at the back",
+    "Another worker is partially visible in the lower right corner"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_pink_shirt_no_helmet",
+      "features": "Pink shirt, no hard hat",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_blue_jeans_lower_right",
+      "features": "Blue jeans, partially visible in lower right",
+      "violations": []
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0002_00m03s.jpg",
+  "timestamp": "2025-03-16T14:12:54.911665"
+}

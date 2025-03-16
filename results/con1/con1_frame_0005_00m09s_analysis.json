@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Missing PPE (hard hats, vests) on worker in the lower area",
+    "Debris scattered across the ground",
+    "Improper storage of materials that could obstruct pathways"
+  ],
+  "locations": [
+    "Lower area near the center of the image",
+    "Throughout the construction site floor",
+    "Near the metal structures on the right"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing appropriate PPE at all times.",
+    "Clear debris from the ground to prevent tripping hazards.",
+    "Organize and properly store materials to keep pathways clear."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0005_00m09s.jpg",
+  "timestamp": "2025-03-16T01:42:52.490803"
+}

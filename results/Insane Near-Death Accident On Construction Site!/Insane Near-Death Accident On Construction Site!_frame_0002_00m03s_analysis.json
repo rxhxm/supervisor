@@ -1,0 +1,53 @@
+{
+  "violations": [
+    "Missing hard hat",
+    "Worker standing on top of equipment",
+    "Improper equipment usage: ladder not secured"
+  ],
+  "locations": [
+    "Near left side of the image",
+    "Near center of the image",
+    "Left side of the image, near the wall"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times.",
+    "Do not stand on equipment. Use proper platforms or scaffolding.",
+    "Ensure ladders are properly secured before use."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker near the left with a red hat and vest",
+    "One worker in the center wearing a dark outfit",
+    "One worker on the left adjusting equipment near the wall"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_red_hat",
+      "features": "wearing red hat and vest",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_dark_outfit",
+      "features": "wearing dark clothes, standing on equipment",
+      "violations": [
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_near_wall",
+      "features": "adjusting ladder near wall",
+      "violations": [
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0002_00m03s.jpg",
+  "timestamp": "2025-03-16T14:00:54.466673"
+}

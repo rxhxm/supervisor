@@ -1,0 +1,34 @@
+{
+  "violations": [
+    "Missing PPE: No hard hats",
+    "Worker in a dangerous position: Too close to suspended load"
+  ],
+  "locations": [
+    "Center of the image, where the worker is near the suspended coil",
+    "Worker near the suspended coil in the center"
+  ],
+  "severity": [
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE, including hard hats",
+    "Ensure safe distances are maintained from suspended loads"
+  ],
+  "worker_count": 1,
+  "worker_positions": [
+    "Standing near the large coil being lifted"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_near_suspended_load",
+      "features": "Close to the suspended coil, no hard hat visible",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/videoplayback/videoplayback_frame_0001_00m01s.jpg",
+  "timestamp": "2025-03-16T14:42:25.171682"
+}

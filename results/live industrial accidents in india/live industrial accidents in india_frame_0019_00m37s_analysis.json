@@ -1,0 +1,59 @@
+{
+  "violations": [
+    "Worker not wearing a hard hat",
+    "Worker without a safety vest",
+    "Worker in bending position near machinery",
+    "Improper stacking of materials"
+  ],
+  "locations": [
+    "Central part of the image near machinery",
+    "Left side near machinery",
+    "Center with stacked materials"
+  ],
+  "severity": [
+    "medium",
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times.",
+    "Provide and enforce the use of reflective safety vests.",
+    "Train workers on safe procedures and provide safety barriers to prevent accidents near machinery.",
+    "Re-stack materials properly and securely."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker near center machinery, bending position",
+    "One worker near left-side machinery",
+    "One worker near control panel on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_bending",
+      "features": "blue shirt, bending near machinery",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_near_machinery_left",
+      "features": "no safety vest visible near left machinery",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_control_panel_right",
+      "features": "near control panel, no hard hat",
+      "violations": [
+        0
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0019_00m37s.jpg",
+  "timestamp": "2025-03-16T14:07:12.172077"
+}

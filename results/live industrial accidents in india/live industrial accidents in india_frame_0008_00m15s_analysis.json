@@ -1,0 +1,61 @@
+{
+  "violations": [
+    "Missing PPE: Hard hats and vests",
+    "Workers in dangerous positions near operating machinery",
+    "Improper equipment usage: Open machinery without barriers",
+    "Blocked emergency exits or pathways: Stacks of materials obstructing paths"
+  ],
+  "locations": [
+    "Factory floor, near the machinery",
+    "Factory floor, near operating machinery without visible barriers",
+    "Open area with stacked materials"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Provide and enforce the use of PPE such as hard hats and high-visibility vests.",
+    "Ensure workers maintain a safe distance from operating machinery. Implement barriers if necessary.",
+    "Close or shield open machinery to prevent accidental contact.",
+    "Organize materials to clear pathways and ensure emergency exits are unobstructed."
+  ],
+  "worker_count": 5,
+  "worker_positions": [
+    "Near a large green machine",
+    "Leaning over machinery",
+    "Walking near stacked materials",
+    "Standing by an open machine",
+    "Near the lower-right corner of the image"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Wearing a blue shirt, no helmet, near green machine",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_near_stacked_materials",
+      "features": "Near stacked materials, no PPE",
+      "violations": [
+        0,
+        3
+      ]
+    },
+    {
+      "worker_id": "worker_leaning_over_machinery",
+      "features": "Leaning over machinery, no PPE",
+      "violations": [
+        1,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0008_00m15s.jpg",
+  "timestamp": "2025-03-16T14:09:50.888572"
+}

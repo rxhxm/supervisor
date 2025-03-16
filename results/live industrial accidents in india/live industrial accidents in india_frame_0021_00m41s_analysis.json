@@ -1,0 +1,59 @@
+{
+  "violations": [
+    "No visible PPE such as hard hats or vests",
+    "Workers in potentially dangerous positions near machinery",
+    "Improper lifting technique",
+    "Clutter potentially blocking pathways"
+  ],
+  "locations": [
+    "Throughout the image, notably around machinery and workstations",
+    "Near the large CNC machine",
+    "Near the machinery at the back where workers are bending",
+    "Center of the workspace with scattered materials"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are equipped with appropriate PPE including hard hats and vests.",
+    "Reinforce training on maintaining a safe distance from operating machinery.",
+    "Train workers on proper lifting techniques to avoid injury.",
+    "Organize the workplace to ensure pathways are clear and materials are stored properly."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Worker near the CNC machine right side",
+    "Worker bending near the center",
+    "Worker near the machinery at the back left"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_ppe_1",
+      "features": "worker bending in blue shirt near center",
+      "violations": [
+        0,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_2",
+      "features": "worker near CNC machine",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_3",
+      "features": "worker near back machinery in salmon shirt",
+      "violations": [
+        0
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0021_00m41s.jpg",
+  "timestamp": "2025-03-16T14:05:02.399545"
+}

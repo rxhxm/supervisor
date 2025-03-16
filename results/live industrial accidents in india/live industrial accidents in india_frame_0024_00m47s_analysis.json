@@ -1,0 +1,46 @@
+{
+  "violations": [
+    "Missing PPE: Workers not wearing hard hats",
+    "Worker in dangerous position: Leaning into machinery",
+    "Improper equipment usage: No visible safety guards on machines"
+  ],
+  "locations": [
+    "Center left area (near large machinery)",
+    "Center right near CNC machine",
+    "Throughout the machinery areas"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "high"
+  ],
+  "recommendations": [
+    "Equip all workers with hard hats and ensure they are worn at all times.",
+    "Train workers to maintain safe distances from operational machinery.",
+    "Ensure safety guards are installed and used on all machinery."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker bending over near machinery in the center left",
+    "One worker standing at the CNC machine in the center right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, no hard hat",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_green_shirt_no_helmet",
+      "features": "Green shirt, no hard hat",
+      "violations": [
+        0
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0024_00m47s.jpg",
+  "timestamp": "2025-03-16T14:06:33.889069"
+}

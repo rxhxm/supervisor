@@ -1,0 +1,51 @@
+{
+  "violations": [
+    "Missing PPE: No hard hats and high-visibility vests",
+    "Workers in dangerous positions: Worker standing close to heavy machinery",
+    "Improper equipment usage: Items placed precariously near the edge of a machine",
+    "Blocked emergency exit: Pathway cluttered with equipment"
+  ],
+  "locations": [
+    "Near the machinery in the center",
+    "Left side of the image by the large machine",
+    "Central area next to the clustered equipment",
+    "Pathway leading to the back left of the image"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "low",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE, including hard hats and vests.",
+    "Instruct workers to maintain a safe distance from operational machinery.",
+    "Secure all equipment properly on stable surfaces.",
+    "Clear pathways to ensure unobstructed emergency exits."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker standing near the center machinery",
+    "Two workers on the left side near the large machine"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_shirtless_1",
+      "features": "No shirt, near left-side machine",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_blue_gloves_2",
+      "features": "Blue gloves, near center machinery",
+      "violations": [
+        "0",
+        "2"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0012_00m23s.jpg",
+  "timestamp": "2025-03-16T14:07:01.801811"
+}

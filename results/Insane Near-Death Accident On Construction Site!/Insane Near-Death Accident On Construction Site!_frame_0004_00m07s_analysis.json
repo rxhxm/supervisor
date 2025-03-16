@@ -1,0 +1,50 @@
+{
+  "violations": [
+    "Worker without visible hard hat",
+    "Worker without visible safety vest",
+    "Falling debris hazard",
+    "Proper barricades not in place"
+  ],
+  "locations": [
+    "Worker near bottom left corner",
+    "Worker under falling debris",
+    "Area with falling debris in center of the image",
+    "Area left of falling debris in center"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Mandate hard hats for all workers at the site.",
+    "Ensure all workers wear high-visibility vests.",
+    "Implement overhead protection and secure loose materials.",
+    "Install adequate barricades around dangerous areas."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "Bottom left corner near the wall",
+    "Center, beneath falling debris"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_bottom_left_no_helmet",
+      "features": "bottom left, no visible hard hat",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_center_falling_debris",
+      "features": "center, under falling debris",
+      "violations": [
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0004_00m07s.jpg",
+  "timestamp": "2025-03-16T14:00:09.160781"
+}

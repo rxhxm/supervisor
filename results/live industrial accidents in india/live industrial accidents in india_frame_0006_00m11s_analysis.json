@@ -1,0 +1,51 @@
+{
+  "violations": [
+    "Missing PPE: Several workers are not wearing hard hats or high-visibility vests.",
+    "Worker in dangerous position: A worker is bending over near heavy machinery.",
+    "Improper equipment usage: No guards visible on machinery.",
+    "Blocked pathways: Floor area cluttered with materials."
+  ],
+  "locations": [
+    "Near the large machinery on the left side of the image.",
+    "Beside the large machine towards the center-left.",
+    "In front of the large piece of equipment on the left.",
+    "Throughout the workspace, particularly around machinery."
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE, including hard hats and vests.",
+    "Instruct workers to maintain safe distances from operating machinery and avoid bending over in hazardous areas.",
+    "Install proper guards on all machinery to prevent accidents.",
+    "Organize tools and materials to clear pathways and maintain a safe working environment."
+  ],
+  "worker_count": 5,
+  "worker_positions": [
+    "Three workers standing near the large machine on the left.",
+    "One worker bending over near machinery at the center-left.",
+    "One worker partially visible in the bottom right corner."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_turquoise_shirt_no_helmet",
+      "features": "turquoise shirt, no hard hat",
+      "violations": [
+        0,
+        3
+      ]
+    },
+    {
+      "worker_id": "worker_bending_black_clothes",
+      "features": "bending over, black clothes",
+      "violations": [
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0006_00m11s.jpg",
+  "timestamp": "2025-03-16T14:13:26.164109"
+}

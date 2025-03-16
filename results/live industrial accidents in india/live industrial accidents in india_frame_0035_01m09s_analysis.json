@@ -1,0 +1,61 @@
+{
+  "violations": [
+    "Missing PPE: No hard hats",
+    "Missing PPE: No safety vests",
+    "Workers in proximity to machine without guards",
+    "Improper equipment usage: Worker reaching into active machinery"
+  ],
+  "locations": [
+    "Throughout the scene",
+    "Throughout the scene",
+    "Near the machines in the background",
+    "At the machine in the foreground"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats",
+    "Ensure all workers wear safety vests",
+    "Install machine guards and restrict access during operation",
+    "Implement lockout/tagout procedures and train workers on safe machine operation"
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Front center, walking past with teal shirt",
+    "Back center, kneeling next to machinery",
+    "Right side, interacting with machine"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_teal_shirt_no_helmet",
+      "features": "teal shirt, no helmet, dark pants",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_back_kneeling_no_helmet",
+      "features": "white shirt, no helmet, bending over",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_right_active_machine",
+      "features": "light colored pants, reaching into machine",
+      "violations": [
+        "0",
+        "1",
+        "3"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0035_01m09s.jpg",
+  "timestamp": "2025-03-16T14:09:14.811755"
+}

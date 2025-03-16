@@ -1,0 +1,53 @@
+{
+  "violations": [
+    "Missing PPE: Some workers not wearing hard hats or high-visibility vests.",
+    "Workers in dangerous positions: Workers standing close to suspended load.",
+    "Improper equipment usage: Load suspended without visible safety barriers."
+  ],
+  "locations": [
+    "Central area under the suspended coil.",
+    "Area near the entrance with multiple workers."
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE including hard hats and vests.",
+    "Keep a safe distance from suspended loads and use barriers around lifting areas.",
+    "Use clear demarcations and safety barriers around areas with heavy machinery."
+  ],
+  "worker_count": 6,
+  "worker_positions": [
+    "One worker on the left adjusting coils.",
+    "Two workers directly under the suspended coil.",
+    "Three workers near the entrance of the warehouse."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_helmet_1",
+      "features": "Worker without a helmet, close to the suspended load.",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_no_vest_2",
+      "features": "Worker without a vest, near the entrance.",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_no_helmet_3",
+      "features": "Worker adjusting coils on the left without a helmet.",
+      "violations": [
+        0
+      ]
+    }
+  ],
+  "image_path": "data/frames/videoplayback/videoplayback_frame_0004_00m07s.jpg",
+  "timestamp": "2025-03-16T14:42:37.153348"
+}

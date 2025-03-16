@@ -1,0 +1,55 @@
+{
+  "violations": [
+    "Missing PPE: No visible hard hats on workers",
+    "Improper equipment usage: Machine operated without visible safety guards",
+    "Blocked emergency pathways: Clutter near machinery"
+  ],
+  "locations": [
+    "Throughout the image, particularly on workers near machinery",
+    "Near large machine in the center-right of the image",
+    "Near the bottom-center, where items are stacked near the pathway"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Provide and require hard hats and other necessary PPE for all workers on site.",
+    "Ensure machines have visible and properly fitted safety guards before operation.",
+    "Clear clutter and organize the area to keep emergency pathways clear and accessible."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker bending down near the bottom-left",
+    "One worker operating machinery in the center",
+    "One worker standing and observing the machine to the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_turquoise_shirt_bending",
+      "features": "wearing a turquoise shirt, bending down near machinery",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_pink_shirt_operating",
+      "features": "wearing a pink shirt, operating machinery without visible safety guards",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_blue_shirt_observing",
+      "features": "wearing a blue shirt, adjacent to large machinery",
+      "violations": [
+        0,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0022_00m43s.jpg",
+  "timestamp": "2025-03-16T14:04:01.272934"
+}

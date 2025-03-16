@@ -1,0 +1,13 @@
+{
+  "violations": [],
+  "locations": [],
+  "severity": [],
+  "recommendations": [],
+  "worker_count": 1,
+  "worker_positions": [
+    "one worker near the back of the hallway, walking towards the exit"
+  ],
+  "worker_identifiers": [],
+  "image_path": "data/frames/videoplayback/videoplayback_frame_0002_00m03s.jpg",
+  "timestamp": "2025-03-16T14:42:03.850414"
+}

@@ -1,0 +1,68 @@
+{
+  "violations": [
+    "Worker not wearing a hard hat",
+    "Worker not wearing high-visibility vest",
+    "Worker not using fall protection harness near edge",
+    "Improper stacking of materials creating trip hazard",
+    "Blocked pathway with construction debris"
+  ],
+  "locations": [
+    "Center of image",
+    "Center of image",
+    "Top left corner at the edge",
+    "Center of image with wooden materials",
+    "Center leading to top right corner"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times",
+    "All workers should wear high-visibility vests",
+    "Use fall protection harnesses when working near edges",
+    "Organize and secure materials to prevent tripping",
+    "Clear pathways of debris to maintain clear access"
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "Two in the center near the piled debris",
+    "One near the top left corner on the edge",
+    "One at the right side near the stacks of materials"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_helmet_blue_1",
+      "features": "Blue shirt, no helmet, center of image",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_no_vest_yellow_2",
+      "features": "Yellow shirt, no vest, center of image",
+      "violations": [
+        "0",
+        "2"
+      ]
+    },
+    {
+      "worker_id": "worker_near_edge_3",
+      "features": "Near the top left corner at the edge, no harness",
+      "violations": [
+        "2"
+      ]
+    },
+    {
+      "worker_id": "worker_carrying_materials_4",
+      "features": "Located right side, near stacks",
+      "violations": []
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0010_00m19s.jpg",
+  "timestamp": "2025-03-16T13:57:43.839156"
+}

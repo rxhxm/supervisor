@@ -1,0 +1,46 @@
+{
+  "violations": [
+    "Missing hard hats",
+    "Improper equipment usage (scattered materials)",
+    "Blocked pathways due to debris"
+  ],
+  "locations": [
+    "Central area where workers are situated",
+    "Throughout the construction site, especially where materials are scattered",
+    "Pathways leading between site entrance and work area"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing hard hats while on site.",
+    "Organize and secure materials to prevent accidents.",
+    "Clear pathways to ensure emergency access and safe movement."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "Near the center of the image, standing among construction materials",
+    "Towards the right side of the image, moving between scaffolding and materials"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_green_safety_vest",
+      "features": "Wearing a green safety vest, no visible hard hat",
+      "violations": [
+        "0"
+      ]
+    },
+    {
+      "worker_id": "worker_black_clothing",
+      "features": "Wearing black clothing, no visible hard hat",
+      "violations": [
+        "0",
+        "2"
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0007_00m13s.jpg",
+  "timestamp": "2025-03-16T13:59:36.380010"
+}

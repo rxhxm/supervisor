@@ -1,0 +1,46 @@
+{
+  "violations": [
+    "Missing PPE (no hard hats, vests, or gloves visible)",
+    "Worker positioned too close to operating machinery without barriers",
+    "Improper equipment usage (open machine access during operation)"
+  ],
+  "locations": [
+    "Around the machinery in the center of the image",
+    "Near the open machine where a worker is standing"
+  ],
+  "severity": [
+    "High",
+    "Medium",
+    "High"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE including hard hats, gloves, and safety vests.",
+    "Install appropriate safety barriers or signage around operating machinery.",
+    "Ensure machines have proper guarding and are closed when in operation."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker sitting on the floor near machinery in the center left",
+    "One worker standing in front of an open machine on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_helmet_left_1",
+      "features": "sitting on floor, wearing light-colored shirt",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_no_helmet_right_1",
+      "features": "standing by open machine, wearing dark shirt",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0040_01m19s.jpg",
+  "timestamp": "2025-03-16T14:04:37.710534"
+}

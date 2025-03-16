@@ -20,287 +20,260 @@ from extract_frames import extract_frames
 from analyze_frames import analyze_frames_in_directory, create_analysis_prompt
 from create_database import create_database, import_analysis_files
 
-# Set page config
+# Set page config - removed VISOR branding
 st.set_page_config(
-    page_title="VISOR - Construction Safety Monitor",
+    page_title="Construction Safety Monitor",
     page_icon="🚧",
     layout="wide"
 )
 
-# Custom CSS for styling
+# Updated CSS to remove box shadows and empty containers
 st.markdown("""
 <style>
-    /* Main container */
-    .main {
-        background-color: #0a192f;
-        color: #e6f1ff;
+    /* Base colors - everything black and white */
+    .stApp {
+        background-color: white;
     }
     
-    /* Header styling */
-    .header-container {
-        display: flex;
-        align-items: center;
-        margin-bottom: 2rem;
+    /* ALL text black */
+    p, h1, h2, h3, h4, h5, h6, span, div, label, li, a {
+        color: #000000 !important;
     }
     
-    .logo-container {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: radial-gradient(circle at center,
-            #ffcc00 0%,
-            #ff9d00 40%,
-            #ff7b00 70%,
-            #ff6b00 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
-    }
-    
-    .logo-text {
-        color: #0a192f;
-        font-weight: bold;
-        font-size: 16px;
-    }
-    
-    .main-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        background: linear-gradient(to right, #ffcc00, #ff6b00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    
-    /* Section headings */
-    .section-heading {
-        font-size: 1.5rem;
-        color: #64ffda;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        padding-bottom: 5px;
-        border-bottom: 1px solid #1d304f;
-    }
-    
-    /* Cards styling */
-    .card {
-        background-color: #112240;
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-        border: 1px solid #1d304f;
-    }
-    
-    /* Buttons styling */
-    .primary-button {
-        background-color: #ffcc00 !important;
-        color: #0a192f !important;
-        font-weight: bold !important;
-    }
-    
-    /* Error message */
-    .error-message {
-        background-color: rgba(255, 0, 0, 0.1);
-        color: #ff6b6b;
-        padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid #ff6b6b;
-    }
-    
-    /* Success message */
-    .success-message {
-        background-color: rgba(0, 255, 0, 0.1);
-        color: #64ffda;
-        padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid #64ffda;
-    }
-    
-    /* Metrics styling */
-    .metric-container {
-        background-color: #112240;
-        border-radius: 8px;
-        padding: 1.2rem;
-        text-align: center;
-        border: 1px solid #1d304f;
-    }
-    
+    /* ALL headings black (override blues) */
+    .main-title, 
+    .section-heading, 
+    h3[style*="color: #1e40af"],
+    p[style*="color: #1e40af"],
+    p[style*="color: #1e3a8a"],
+    div[style*="color: #1e40af"],
     .metric-value {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #ffcc00;
+        color: #000000 !important; 
     }
     
-    .metric-label {
-        font-size: 0.9rem;
-        color: #8892b0;
-    }
-    
-    /* Violation card */
-    .violation-card {
-        background-color: #112240;
-        border-radius: 8px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        border: 1px solid #1d304f;
-    }
-    
-    .violation-header {
+    /* Severity indicators - all black text on light grey background */
+    .severity-high, .severity-medium, .severity-low {
+        color: #000000 !important;
         font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-    
-    .violation-detail {
-        color: #8892b0;
-        margin-bottom: 0.3rem;
-        font-size: 0.9rem;
-    }
-    
-    .severity-high {
-        color: #ff6b6b;
-        font-weight: 600;
-    }
-    
-    .severity-medium {
-        color: #ffcc00;
-        font-weight: 600;
-    }
-    
-    .severity-low {
-        color: #64ffda;
-        font-weight: 600;
-    }
-    
-    /* Upload box */
-    .upload-box {
-        border: 2px dashed #1d304f;
-        border-radius: 8px;
-        padding: 2rem;
-        text-align: center;
-        background-color: rgba(29, 48, 79, 0.3);
-    }
-    
-    /* Animation elements */
-    @keyframes zoom-out {
-        0% { 
-            transform: scale(1) translate(-50%, -50%); 
-            top: 50%;
-            left: 50%;
-        }
-        100% { 
-            transform: scale(0.3) translate(0, 0); 
-            top: 20px;
-            right: 20px;
-            left: auto;
-        }
-    }
-    
-    .safety-lens {
-        position: fixed;
-        width: 200vh;
-        height: 200vh;
-        border-radius: 50%;
-        background: radial-gradient(circle at center,
-            #ffcc00 0%,
-            #ff9d00 40%,
-            #ff7b00 70%,
-            #ff6b00 100%);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: zoom-out 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        animation-delay: 0.5s;
-    }
-    
-    .content {
-        opacity: 0;
-        animation: fade-in 0.5s ease-in forwards;
-        animation-delay: 1.8s;
-    }
-    
-    @keyframes fade-in {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    
-    .lens-content {
-        color: #0a192f;
-        font-weight: bold;
-        font-size: 10vh;
-        opacity: 0;
-        animation: fade-in 0.5s ease-in forwards, 
-                   scale-down 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        animation-delay: 0s, 0.5s;
-    }
-    
-    @keyframes scale-down {
-        0% { 
-            transform: scale(1);
-            font-size: 10vh;
-        }
-        100% { 
-            transform: scale(0.3);
-            font-size: 16px;
-        }
-    }
-    
-    /* Add to your existing styles */
-    .progress-label {
-        color: #64ffda;
-        font-size: 0.9rem;
-        margin-bottom: 0.2rem;
-    }
-    
-    .progress-detail {
-        color: #8892b0;
-        font-size: 0.8rem;
-        margin-top: 0.2rem;
-    }
-    
-    .progress-container {
-        background-color: rgba(29, 48, 79, 0.3);
-        border-radius: 8px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        border: 1px solid #1d304f;
-    }
-    
-    .stage-indicator {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-    }
-    
-    .stage {
-        text-align: center;
-        padding: 0.5rem;
+        background-color: #f3f4f6;
+        padding: 2px 6px;
         border-radius: 4px;
-        flex: 1;
-        margin: 0 0.2rem;
+    }
+    
+    /* Make buttons black */
+    button[data-testid="baseButton-primary"] {
+        background-color: #000000 !important;
+        color: white !important;
+    }
+    
+    /* Make tab indicators black */
+    .stTabs [aria-selected="true"] {
+        color: #000000 !important;
+        border-bottom-color: #000000 !important;
+    }
+    
+    /* Make progress indicators black */
+    .progress-label, .stage-active {
+        color: #000000 !important;
     }
     
     .stage-active {
-        background-color: rgba(100, 255, 218, 0.2);
-        border: 1px solid #64ffda;
-        color: #64ffda;
+        border-color: #000000 !important;
+        background-color: rgba(0, 0, 0, 0.05) !important;
     }
     
-    .stage-complete {
-        background-color: rgba(100, 255, 218, 0.1);
-        border: 1px solid #1d304f;
-        color: #8892b0;
+    /* Streamlit progress bar */
+    .stProgress > div > div > div {
+        background-color: #000000 !important;
     }
     
-    .stage-pending {
-        background-color: transparent;
-        border: 1px dashed #1d304f;
-        color: #3d4550;
+    /* Override all alert colors to black/white */
+    div[data-testid="stError"], div[data-testid="stWarning"], div[data-testid="stInfo"], div[data-testid="stSuccess"] {
+        background-color: #f8f8f8 !important;
+        color: #000000 !important;
+        border: 1px solid #000000 !important;
+    }
+    
+    /* Override expander styling */
+    .streamlit-expanderHeader {
+        color: #000000 !important;
+    }
+    
+    /* Fix recommendation headers */
+    div[style*="color: #1e40af"] {
+        color: #000000 !important;
+    }
+    
+    /* Charts should use grayscale */
+    .js-plotly-plot .plotly .modebar {
+        filter: grayscale(100%);
+    }
+    
+    /* Slider track & thumb */
+    [data-testid="stSlider"] > div > div > div {
+        background-color: #000000 !important;
+    }
+    
+    /* Checkbox color */
+    [data-testid="stCheckbox"] svg {
+        fill: #000000 !important;
+    }
+    
+    /* Any remaining blue accents */
+    div[style*="background-color: rgba(30, 64, 175, 0.1)"] {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+    }
+    
+    div[style*="border: 1px solid #1e40af"] {
+        border: 1px solid #000000 !important;
+    }
+    
+    /* Override pie chart colors to grayscale */
+    svg .trace.scatter .points path {
+        fill: #000000 !important;
+    }
+    
+    /* Make all chart text black */
+    .js-plotly-plot .plotly text {
+        fill: #000000 !important;
+        color: #000000 !important;
+    }
+    
+    /* Make chart axes black */
+    .js-plotly-plot .plotly .xtick text,
+    .js-plotly-plot .plotly .ytick text {
+        fill: #000000 !important;
+    }
+    
+    /* Change dark backgrounds to white with black borders */
+    div[data-testid="stFileUploader"] {
+        background-color: white !important;
+        border: 1px solid #000000 !important;
+    }
+    
+    /* Make all input fields white with black text */
+    input, textarea, [data-testid="stTextInput"] > div {
+        background-color: white !important;
+        color: #000000 !important;
+        border: 1px solid #000000 !important;
+    }
+    
+    /* Convert red elements to black or white */
+    .st-emotion-cache-1w9aeh3 {
+        background-color: white !important;
+        color: #000000 !important;
+    }
+    
+    /* Override any remaining colored elements */
+    [data-testid="stCheckbox"] > div > div {
+        background-color: white !important;
+        border: 1px solid #000000 !important;
+    }
+    
+    /* File uploader background (dark box in screenshot) */
+    [data-testid="stFileUploader"] > section {
+        background-color: white !important;
+        border: 1px solid #000000 !important;
+    }
+    
+    [data-testid="stFileUploader"] p,
+    [data-testid="stFileUploader"] small,
+    [data-testid="stFileUploader"] svg {
+        color: #000000 !important;
+        fill: #000000 !important;
+    }
+    
+    /* File uploader button */
+    [data-testid="stFileUploader"] button {
+        background-color: white !important;
+        color: #000000 !important;
+        border: 1px solid #000000 !important;
+    }
+    
+    /* API Key input field (dots) */
+    input[type="password"] {
+        color: #000000 !important;
+    }
+    
+    /* Slider track - make it black */
+    [data-testid="stSlider"] > div > div > div:first-child {
+        background-color: #DDDDDD !important;
+    }
+    
+    /* Slider thumb - make it black */
+    [data-testid="stSlider"] > div > div > div:nth-child(2) {
+        background-color: #000000 !important;
+    }
+    
+    /* Checkbox - make checked state black */
+    [data-testid="stCheckbox"] svg {
+        fill: #000000 !important;
+    }
+    
+    /* Fix for dark buttons with black text */
+    button[kind="secondary"], 
+    button.stButton button,
+    button.streamlit-button,
+    .stButton>button {
+        color: white !important;
+        background-color: #000000 !important;
+        border: 1px solid #000000 !important;
+    }
+    
+    /* Fix specifically for "Clear All Previous Results" button */
+    button:contains("Clear All Previous Results"),
+    button:contains("Deploy") {
+        color: white !important;
+        background-color: #000000 !important;
+    }
+    
+    /* Alt approach - fixing any button with dark background */
+    button[style*="background-color: rgb(38, 39, 48)"],
+    button[style*="background-color: #262730"],
+    button[style*="background-color: rgb(23, 23, 23)"] {
+        color: white !important;
+    }
+    
+    /* Target footer buttons like Deploy */
+    .css-10pw50, .css-fblp2m {
+        color: white !important;
+    }
+    
+    /* Target bottom footer menu */
+    [data-testid="stAppViewBlockContainer"] > div:last-child button,
+    [data-testid="baseButton-secondary"] {
+        color: white !important;
+    }
+    
+    /* Safety measure - any dark background should have white text */
+    button {
+        color: white !important;
+    }
+    
+    /* Prevent any buttons from having inherit colors */
+    button * {
+        color: inherit !important;
+    }
+    
+    /* Style the Clear Results button specifically */
+    .clear-results-button {
+        background-color: #000000;
+        color: white !important;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px 0;
+    }
+    
+    /* Checkbox label should be black */
+    .confirmation-text {
+        color: #000000 !important;
+        font-weight: normal;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -513,30 +486,9 @@ def search_violations_by_query(query_text):
         "image_path": v[6]
     } for v in violations]
 
-# Animation elements (shown only on the first load)
+# Remove animation elements
 if 'animation_shown' not in st.session_state:
     st.session_state.animation_shown = True
-    
-    # Display the animation elements
-    st.markdown("""
-    <div class="safety-lens">
-        <div class="lens-content">VISOR</div>
-    </div>
-    <div class="content">
-    """, unsafe_allow_html=True)
-else:
-    # Skip animation if already shown
-    st.markdown('<div class="content">', unsafe_allow_html=True)
-
-# Custom header with logo
-st.markdown("""
-<div class="header-container">
-    <div class="logo-container">
-        <div class="logo-text">VISOR</div>
-    </div>
-    <h1 class="main-title">Construction Safety Monitor</h1>
-</div>
-""", unsafe_allow_html=True)
 
 # Initialize session state variables
 if 'custom_queries' not in st.session_state:
@@ -544,317 +496,254 @@ if 'custom_queries' not in st.session_state:
 if 'videos_analyzed' not in st.session_state:
     st.session_state.videos_analyzed = False
 if 'openai_api_key' not in st.session_state:
+    # Just load from environment, don't prompt user
     st.session_state.openai_api_key = os.getenv("OPENAI_API_KEY", "")
 if 'current_videos' not in st.session_state:
     st.session_state.current_videos = []
 
-# Main content area
-st.markdown('<div class="section-heading">Upload & Analyze Construction Videos</div>', unsafe_allow_html=True)
+# Simplified header
+st.markdown("""
+<div class="header-container">
+    <h1 class="main-title">Construction Safety Monitor</h1>
+</div>
+""", unsafe_allow_html=True)
 
-# Create layout with two columns
-col1, col2 = st.columns([2, 1])
+# Main sections with no empty containers
+st.markdown('<div class="section-heading">Upload & Configure</div>', unsafe_allow_html=True)
 
-with col1:
-    # Video upload section
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    
-    # Video upload widget
-    st.markdown('<div class="upload-box">', unsafe_allow_html=True)
-    uploaded_files = st.file_uploader("Upload construction site videos", 
-                                     type=["mp4", "avi", "mov", "mkv"], 
-                                     accept_multiple_files=True)
-    st.markdown('<p style="color: #8892b0; font-size: 0.8rem;">Supported formats: MP4, AVI, MOV, MKV | Max size: 200MB</p>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    if uploaded_files:
-        st.success(f"Uploaded {len(uploaded_files)} video(s)")
-        
-        # Display video thumbnails in a grid
-        video_count = len(uploaded_files)
-        cols_per_row = min(3, video_count)
-        
-        for i in range(0, video_count, cols_per_row):
-            cols = st.columns(cols_per_row)
-            for j in range(cols_per_row):
-                if i + j < video_count:
-                    with cols[j]:
-                        # Save the video temporarily
-                        temp_dir = tempfile.mkdtemp()
-                        temp_path = os.path.join(temp_dir, uploaded_files[i+j].name)
-                        with open(temp_path, "wb") as f:
-                            f.write(uploaded_files[i+j].getbuffer())
-                        
-                        # Display video thumbnail
-                        st.video(temp_path)
-                        st.caption(uploaded_files[i+j].name)
-    
-    st.markdown('</div>', unsafe_allow_html=True)
+# VIDEO UPLOAD SECTION - Modified to show smaller videos
+st.markdown('<h3 style="color: #1e40af; font-size: 1.2rem; margin-bottom: 0.5rem;">Video Upload</h3>', unsafe_allow_html=True)
 
-with col2:
-    # API Key and Smart Query section
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    
-    # API Key input
-    st.markdown('<div style="margin-bottom: 1rem;">', unsafe_allow_html=True)
-    st.markdown('<p style="color: #64ffda; font-weight: 600; margin-bottom: 0.5rem;">OpenAI API Key</p>', unsafe_allow_html=True)
-    api_key = st.text_input("OpenAI API Key", 
-                          value=st.session_state.openai_api_key,
-                          type="password",
-                          help="Required for video analysis")
-    
-    if api_key:
-        st.session_state.openai_api_key = api_key
-        os.environ["OPENAI_API_KEY"] = api_key
-    
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    # Smart Query section
-    st.markdown('<p style="color: #64ffda; font-weight: 600; margin-bottom: 0.5rem;">Smart Query</p>', unsafe_allow_html=True)
-    st.markdown('<p style="color: #8892b0; font-size: 0.9rem;">Ask specific questions about violations you want to detect:</p>', unsafe_allow_html=True)
-    
-    query_input = st.text_area("Smart Query", 
-                              placeholder="Example: 'Find workers without harnesses near edges'",
-                              height=80, 
-                              label_visibility="collapsed")
-    
-    if query_input and st.button("Add Query", type="primary"):
-        st.markdown(f'<div style="background-color: rgba(100, 255, 218, 0.1); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">Added: "{query_input}"</div>', unsafe_allow_html=True)
-        
-        # Add query to session state
-        if query_input not in st.session_state.custom_queries:
-            st.session_state.custom_queries.append(query_input)
-    
-    # Display current queries
-    if st.session_state.custom_queries:
-        st.markdown('<div style="margin-top: 1rem;">', unsafe_allow_html=True)
-        st.markdown('<p style="color: #8892b0;">Your queries:</p>', unsafe_allow_html=True)
-        
-        for i, query in enumerate(st.session_state.custom_queries):
-            cols = st.columns([9, 1])
-            with cols[0]:
-                st.markdown(f'<div style="font-size: 0.9rem; padding: 0.3rem;">{i+1}. {query[:40]}{"..." if len(query) > 40 else ""}</div>', unsafe_allow_html=True)
-            with cols[1]:
-                if st.button("×", key=f"del_{i}"):
-                    st.session_state.custom_queries.pop(i)
-                    st.rerun()
-        
-        st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('</div>', unsafe_allow_html=True)
+# Simplified upload with no extra wrapper divs
+uploaded_files = st.file_uploader("Upload construction site videos", 
+                                 type=["mp4", "avi", "mov", "mkv"], 
+                                 accept_multiple_files=True,
+                                 label_visibility="collapsed")
+st.markdown('<p style="color: #6b7280; font-size: 0.8rem;">Supported formats: MP4, AVI, MOV, MKV | Max size: 200MB</p>', unsafe_allow_html=True)
 
-# Analysis Configuration section
-st.markdown('<div class="section-heading">Analysis Configuration</div>', unsafe_allow_html=True)
-
-with st.expander("Configure Detection Settings", expanded=True):
-    config_cols = st.columns(2)
-    
-    with config_cols[0]:
-        st.markdown('<p style="color: #64ffda; font-weight: 600;">Safety Violations to Detect</p>', unsafe_allow_html=True)
-        
-        detect_ppe = st.checkbox("Missing PPE (hard hats, vests, gloves, harnesses)", value=True)
-        detect_positions = st.checkbox("Workers in dangerous positions", value=True)
-        detect_equipment = st.checkbox("Improper equipment usage", value=True)
-        detect_exits = st.checkbox("Blocked emergency exits/pathways", value=True)
-        detect_other = st.checkbox("Other safety hazards", value=True)
-        
-        # Create a safety checks dictionary
-        safety_checks = {
-            "ppe": detect_ppe,
-            "dangerous_positions": detect_positions,
-            "improper_equipment": detect_equipment,
-            "blocked_exits": detect_exits,
-            "other_hazards": detect_other
-        }
-    
-    with config_cols[1]:
-        st.markdown('<p style="color: #64ffda; font-weight: 600;">Processing Options</p>', unsafe_allow_html=True)
-        
-        # Frame extraction settings
-        frame_interval = st.slider("Extract frames every ___ seconds", 1, 10, 2)
-        
-        # Worker tracking
-        enable_tracking = st.checkbox("Enable worker tracking and identification", value=True)
-        
-        # If we have custom queries, show them
-        if st.session_state.custom_queries:
-            st.markdown('<p style="color: #64ffda; font-weight: 600; margin-top: 1rem;">Your Custom Queries</p>', unsafe_allow_html=True)
-            for query in st.session_state.custom_queries:
-                st.markdown(f'<div style="color: #8892b0; font-size: 0.9rem; margin-bottom: 0.3rem;">• {query}</div>', unsafe_allow_html=True)
-
-# Analysis Button
 if uploaded_files:
-    st.markdown('<div style="margin-top: 1.5rem;">', unsafe_allow_html=True)
+    st.success(f"Uploaded {len(uploaded_files)} video(s)")
     
+    # Display video thumbnails in a more compact grid
+    video_count = len(uploaded_files)
+    cols_per_row = min(4, video_count)  # Show more videos per row
+    
+    for i in range(0, video_count, cols_per_row):
+        cols = st.columns(cols_per_row)
+        for j in range(cols_per_row):
+            if i + j < video_count:
+                with cols[j]:
+                    # Save the video temporarily
+                    temp_dir = tempfile.mkdtemp()
+                    temp_path = os.path.join(temp_dir, uploaded_files[i+j].name)
+                    with open(temp_path, "wb") as f:
+                        f.write(uploaded_files[i+j].getbuffer())
+                    
+                    # Display smaller video thumbnail
+                    st.video(temp_path)
+                    st.caption(uploaded_files[i+j].name)
+
+# ANALYSIS CONFIGURATION SECTION - Moved up since API key section was removed
+st.markdown('<h3 style="color: #1e40af; font-size: 1.2rem; margin-top: 1rem; margin-bottom: 0.5rem;">Analysis Configuration</h3>', unsafe_allow_html=True)
+
+config_cols = st.columns(2)
+
+with config_cols[0]:
+    st.markdown('<p style="color: #1e40af; font-weight: 600;">Safety Violations to Detect</p>', unsafe_allow_html=True)
+    
+    detect_ppe = st.checkbox("Missing PPE (hard hats, vests, gloves, harnesses)", value=True)
+    detect_positions = st.checkbox("Workers in dangerous positions", value=True)
+    detect_equipment = st.checkbox("Improper equipment usage", value=True)
+    detect_exits = st.checkbox("Blocked emergency exits/pathways", value=True)
+    detect_other = st.checkbox("Other safety hazards", value=True)
+    
+    # Create a safety checks dictionary
+    safety_checks = {
+        "ppe": detect_ppe,
+        "dangerous_positions": detect_positions,
+        "improper_equipment": detect_equipment,
+        "blocked_exits": detect_exits,
+        "other_hazards": detect_other
+    }
+
+with config_cols[1]:
+    st.markdown('<p style="color: #1e40af; font-weight: 600;">Processing Options</p>', unsafe_allow_html=True)
+    
+    # Frame extraction settings
+    frame_interval = st.slider("Extract frames every ___ seconds", 1, 10, 2)
+    
+    # Worker tracking
+    enable_tracking = st.checkbox("Enable worker tracking and identification", value=True)
+
+# Analysis Button (moved up to replace the query section)
+if uploaded_files:
+    st.markdown('<div style="margin-top: 1rem;">', unsafe_allow_html=True)
     process_button = st.button("Start Safety Analysis", type="primary", use_container_width=True)
+    st.markdown('</div>', unsafe_allow_html=True)
     
     if process_button:
         # Reset current videos list at the start of a new analysis
         st.session_state.current_videos = []
         
-        # Check for API key
-        if not st.session_state.openai_api_key:
-            st.error("OpenAI API Key is required for video analysis. Please enter your API key.")
-        else:
-            # Run the analysis pipeline
-            overall_progress_bar = st.progress(0)
-            # Create a container for detailed progress info
-            progress_container = st.container()
-            with progress_container:
-                st.markdown('<div class="progress-container">', unsafe_allow_html=True)
-                
-                # Visual stage indicator
-                current_stage = 0  # 0=extraction, 1=analysis, 2=import
-                st.markdown("""
-                <div class="stage-indicator">
-                    <div class="stage stage-active" id="stage-extract">Extract Frames</div>
-                    <div class="stage stage-pending" id="stage-analyze">Analyze Frames</div>
-                    <div class="stage stage-pending" id="stage-import">Save Results</div>
-                </div>
-                """, unsafe_allow_html=True)
-                
-                stage_text = st.empty()
-                frame_progress = st.empty()
-                frame_progress_bar = st.empty()
-                frame_status = st.empty()
-                
-                st.markdown('</div>', unsafe_allow_html=True)
+        # Remove API key check - we assume it's already set
+        # Run the analysis pipeline
+        overall_progress_bar = st.progress(0)
+        # Create a container for detailed progress info
+        progress_container = st.container()
+        with progress_container:
+            st.markdown('<div class="progress-container">', unsafe_allow_html=True)
             
-            results_container = st.container()
+            # Visual stage indicator
+            current_stage = 0  # 0=extraction, 1=analysis, 2=import
+            st.markdown("""
+            <div class="stage-indicator">
+                <div class="stage stage-active" id="stage-extract">Extract Frames</div>
+                <div class="stage stage-pending" id="stage-analyze">Analyze Frames</div>
+                <div class="stage stage-pending" id="stage-import">Save Results</div>
+            </div>
+            """, unsafe_allow_html=True)
             
-            try:
-                with st.spinner("Processing videos..."):
-                    # For each uploaded video
-                    for i, uploaded_file in enumerate(uploaded_files):
-                        video_name = os.path.splitext(uploaded_file.name)[0]
-                        stage_text.text(f"Processing video {i+1}/{len(uploaded_files)}: {video_name}")
-                        
-                        # Add to current videos list
-                        st.session_state.current_videos.append(video_name)
-                        
-                        # Step 1: Save video temporarily
-                        temp_dir = tempfile.mkdtemp()
-                        temp_video_path = os.path.join(temp_dir, uploaded_file.name)
-                        with open(temp_video_path, "wb") as f:
-                            f.write(uploaded_file.getbuffer())
-                        
-                        # Step 2: Create output directories
-                        frames_dir = f"data/frames/{video_name}"
-                        results_dir = f"results/{video_name}"
-                        os.makedirs(frames_dir, exist_ok=True)
-                        os.makedirs(results_dir, exist_ok=True)
-                        
-                        # Step 3: Extract frames from video
-                        stage_text.text(f"Extracting frames from {video_name}...")
-                        
-                        # Define a callback function for frame extraction progress
-                        def extraction_progress(current, total, percent):
-                            frame_progress.text(f"Extracting frame {current}/{total}")
-                            frame_progress_bar.progress(percent)
-                            frame_status.text(f"{current} frames extracted ({percent:.1%} complete)")
-                            # Also update the overall progress
-                            overall_percent = ((i * 3) + (percent * 1)) / (len(uploaded_files) * 3)
-                            overall_progress_bar.progress(overall_percent)
-                        
-                        try:
-                            extract_frames(temp_video_path, "data/frames", frame_interval, extraction_progress)
-                        except Exception as e:
-                            st.error(f"Error extracting frames: {str(e)}")
-                            continue
-                        
-                        # Step 4: Analyze frames
-                        stage_text.text(f"Analyzing frames from {video_name} for safety violations...")
-                        
-                        # Define a callback function for analysis progress
-                        def analysis_progress(current, total, percent):
-                            frame_progress.text(f"Analyzing frame {current}/{total}")
-                            frame_progress_bar.progress(percent)
-                            frame_status.text(f"{current} frames analyzed ({percent:.1%} complete)")
-                            # Also update the overall progress
-                            overall_percent = ((i * 3) + 1 + (percent * 1)) / (len(uploaded_files) * 3)
-                            overall_progress_bar.progress(overall_percent)
-                        
-                        try:
-                            analyze_frames_in_directory(
-                                frames_dir, 
-                                results_dir, 
-                                st.session_state.openai_api_key,
-                                custom_queries=st.session_state.custom_queries,
-                                safety_checks=safety_checks,
-                                progress_callback=analysis_progress
-                            )
-                        except Exception as e:
-                            st.error(f"Error analyzing frames: {str(e)}")
-                            continue
-                        
-                        # Step 5: Import results to database
-                        stage_text.text(f"Saving analysis results for {video_name}...")
-                        frame_progress.text("Importing results to database...")
-                        frame_progress_bar.progress(0)
-                        
-                        try:
-                            # Count files to import for progress tracking
-                            json_files = glob.glob(os.path.join(results_dir, '**', '*_analysis.json'), recursive=True)
-                            total_files = len(json_files)
-                            
-                            # Define a custom import function that updates progress
-                            def import_with_progress():
-                                conn = sqlite3.connect("database.sqlite", check_same_thread=False)
-                                imported = 0
-                                
-                                for file_path in json_files:
-                                    # Import logic here (simplified version)
-                                    try:
-                                        # Your import logic from create_database.py
-                                        # Process the file...
-                                        
-                                        # Update progress after each file
-                                        imported += 1
-                                        percent = imported / total_files
-                                        frame_progress.text(f"Importing result {imported}/{total_files}")
-                                        frame_progress_bar.progress(percent)
-                                        frame_status.text(f"{imported} results imported ({percent:.1%} complete)")
-                                        
-                                        # Also update the overall progress
-                                        overall_percent = ((i * 3) + 2 + (percent * 1)) / (len(uploaded_files) * 3)
-                                        overall_progress_bar.progress(overall_percent)
-                                    except Exception as e:
-                                        # Log error but continue with other files
-                                        print(f"Error importing {file_path}: {e}")
-                                
-                                conn.close()
-                                return imported
-                            
-                            # If you prefer to use your existing function instead of the custom one above:
-                            import_analysis_files("database.sqlite", results_dir)
-                            # Update progress after import completes
-                            overall_percent = ((i * 3) + 3) / (len(uploaded_files) * 3)
-                            overall_progress_bar.progress(overall_percent)
-                            
-                        except Exception as e:
-                            st.error(f"Error importing results to database: {str(e)}")
-                            continue
+            stage_text = st.empty()
+            frame_progress = st.empty()
+            frame_progress_bar = st.empty()
+            frame_status = st.empty()
+            
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        results_container = st.container()
+        
+        try:
+            with st.spinner("Processing videos..."):
+                # For each uploaded video
+                for i, uploaded_file in enumerate(uploaded_files):
+                    video_name = os.path.splitext(uploaded_file.name)[0]
+                    stage_text.text(f"Processing video {i+1}/{len(uploaded_files)}: {video_name}")
                     
-                    # Complete
-                    overall_progress_bar.progress(1.0)
-                    stage_text.text("Analysis complete!")
-                    frame_progress.empty()
-                    frame_progress_bar.empty()
-                    frame_status.text("All videos processed successfully!")
-                    st.session_state.videos_analyzed = True
+                    # Add to current videos list
+                    st.session_state.current_videos.append(video_name)
                     
-            except Exception as e:
-                st.error(f"An error occurred during processing: {str(e)}")
+                    # Step 1: Save video temporarily
+                    temp_dir = tempfile.mkdtemp()
+                    temp_video_path = os.path.join(temp_dir, uploaded_file.name)
+                    with open(temp_video_path, "wb") as f:
+                        f.write(uploaded_file.getbuffer())
+                    
+                    # Step 2: Create output directories
+                    frames_dir = f"data/frames/{video_name}"
+                    results_dir = f"results/{video_name}"
+                    os.makedirs(frames_dir, exist_ok=True)
+                    os.makedirs(results_dir, exist_ok=True)
+                    
+                    # Step 3: Extract frames from video
+                    stage_text.text(f"Extracting frames from {video_name}...")
+                    
+                    # Define a callback function for frame extraction progress
+                    def extraction_progress(current, total, percent):
+                        frame_progress.text(f"Extracting frame {current}/{total}")
+                        frame_progress_bar.progress(percent)
+                        frame_status.text(f"{current} frames extracted ({percent:.1%} complete)")
+                        # Also update the overall progress
+                        overall_percent = ((i * 3) + (percent * 1)) / (len(uploaded_files) * 3)
+                        overall_progress_bar.progress(overall_percent)
+                    
+                    try:
+                        extract_frames(temp_video_path, "data/frames", frame_interval, extraction_progress)
+                    except Exception as e:
+                        st.error(f"Error extracting frames: {str(e)}")
+                        continue
+                    
+                    # Step 4: Analyze frames
+                    stage_text.text(f"Analyzing frames from {video_name} for safety violations...")
+                    
+                    # Define a callback function for analysis progress
+                    def analysis_progress(current, total, percent):
+                        frame_progress.text(f"Analyzing frame {current}/{total}")
+                        frame_progress_bar.progress(percent)
+                        frame_status.text(f"{current} frames analyzed ({percent:.1%} complete)")
+                        # Also update the overall progress
+                        overall_percent = ((i * 3) + 1 + (percent * 1)) / (len(uploaded_files) * 3)
+                        overall_progress_bar.progress(overall_percent)
+                    
+                    try:
+                        analyze_frames_in_directory(
+                            frames_dir, 
+                            results_dir, 
+                            st.session_state.openai_api_key,
+                            custom_queries=st.session_state.custom_queries,
+                            safety_checks=safety_checks,
+                            progress_callback=analysis_progress
+                        )
+                    except Exception as e:
+                        st.error(f"Error analyzing frames: {str(e)}")
+                        continue
+                    
+                    # Step 5: Import results to database
+                    stage_text.text(f"Saving analysis results for {video_name}...")
+                    frame_progress.text("Importing results to database...")
+                    frame_progress_bar.progress(0)
+                    
+                    try:
+                        # Count files to import for progress tracking
+                        json_files = glob.glob(os.path.join(results_dir, '**', '*_analysis.json'), recursive=True)
+                        total_files = len(json_files)
+                        
+                        # Define a custom import function that updates progress
+                        def import_with_progress():
+                            conn = sqlite3.connect("database.sqlite", check_same_thread=False)
+                            imported = 0
+                            
+                            for file_path in json_files:
+                                # Import logic here (simplified version)
+                                try:
+                                    # Your import logic from create_database.py
+                                    # Process the file...
+                                    
+                                    # Update progress after each file
+                                    imported += 1
+                                    percent = imported / total_files
+                                    frame_progress.text(f"Importing result {imported}/{total_files}")
+                                    frame_progress_bar.progress(percent)
+                                    frame_status.text(f"{imported} results imported ({percent:.1%} complete)")
+                                    
+                                    # Also update the overall progress
+                                    overall_percent = ((i * 3) + 2 + (percent * 1)) / (len(uploaded_files) * 3)
+                                    overall_progress_bar.progress(overall_percent)
+                                except Exception as e:
+                                    # Log error but continue with other files
+                                    print(f"Error importing {file_path}: {e}")
+                            
+                            conn.close()
+                            return imported
+                        
+                        # If you prefer to use your existing function instead of the custom one above:
+                        import_analysis_files("database.sqlite", results_dir)
+                        # Update progress after import completes
+                        overall_percent = ((i * 3) + 3) / (len(uploaded_files) * 3)
+                        overall_progress_bar.progress(overall_percent)
+                        
+                    except Exception as e:
+                        st.error(f"Error importing results to database: {str(e)}")
+                        continue
                 
-    st.markdown('</div>', unsafe_allow_html=True)
-
-# Results section - show if we have analyzed videos or have data in the database
+                # Complete
+                overall_progress_bar.progress(1.0)
+                stage_text.text("Analysis complete!")
+                frame_progress.empty()
+                frame_progress_bar.empty()
+                frame_status.text("All videos processed successfully!")
+                st.session_state.videos_analyzed = True
+                
+        except Exception as e:
+            st.error(f"An error occurred during processing: {str(e)}")
+                
+# RESULTS SECTION - Modified to remove white box and custom query tab
 violation_stats = get_violation_stats()
 
 if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
     st.markdown('<div class="section-heading">Analysis Results</div>', unsafe_allow_html=True)
     
     # Create tabs for different views of the data
-    tabs = st.tabs(["Summary", "Violations Gallery", "Custom Query Results", "Dashboard"])
+    tabs = st.tabs(["Summary", "Violations Gallery", "Dashboard"])
     
     with tabs[0]:  # Summary tab
         # Add a toggle to filter results
@@ -869,57 +758,73 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
         with metric_cols[0]:
             st.markdown(f"""
             <div class="metric-container">
-                <div class="metric-value">{violation_stats['total']}</div>
-                <div class="metric-label">Total Violations</div>
+                <div class="metric-value" style="color: #000000 !important;">{violation_stats['total']}</div>
+                <div class="metric-label" style="color: #000000 !important;">Total Violations</div>
             </div>
             """, unsafe_allow_html=True)
         
         with metric_cols[1]:
             st.markdown(f"""
             <div class="metric-container">
-                <div class="metric-value">{violation_stats['high']}</div>
-                <div class="metric-label">High Severity</div>
+                <div class="metric-value" style="color: #000000 !important;">{violation_stats['high']}</div>
+                <div class="metric-label" style="color: #000000 !important;">High Severity</div>
             </div>
             """, unsafe_allow_html=True)
         
         with metric_cols[2]:
             st.markdown(f"""
             <div class="metric-container">
-                <div class="metric-value">{violation_stats['medium']}</div>
-                <div class="metric-label">Medium Severity</div>
+                <div class="metric-value" style="color: #000000 !important;">{violation_stats['medium']}</div>
+                <div class="metric-label" style="color: #000000 !important;">Medium Severity</div>
             </div>
             """, unsafe_allow_html=True)
         
         with metric_cols[3]:
             st.markdown(f"""
             <div class="metric-container">
-                <div class="metric-value">{violation_stats['low']}</div>
-                <div class="metric-label">Low Severity</div>
+                <div class="metric-value" style="color: #000000 !important;">{violation_stats['low']}</div>
+                <div class="metric-label" style="color: #000000 !important;">Low Severity</div>
             </div>
             """, unsafe_allow_html=True)
         
         # Violation type breakdown
-        st.markdown('<p style="color: #64ffda; font-weight: 600; margin-top: 1.5rem;">Violation Type Breakdown</p>', unsafe_allow_html=True)
+        st.markdown('<p style="color: #000000; font-weight: 600; margin-top: 1.5rem;">Violation Type Breakdown</p>', unsafe_allow_html=True)
         
         if violation_stats['types']:
             chart_data = pd.DataFrame(violation_stats['types'], columns=["Violation Type", "Count"])
             
+            # Create a monochrome bar chart
             fig = px.bar(
                 chart_data,
                 x="Violation Type",
                 y="Count",
-                color="Count",
-                color_continuous_scale=px.colors.sequential.Viridis,
+                # Instead of a color scale, use a single color
+                color_discrete_sequence=["#000000"],  # Black bars
                 text="Count"
             )
             
+            # Ensure all text is black and clearly visible
+            fig.update_traces(
+                textfont=dict(color="#000000", size=14),  # Black text on bars
+                textposition="outside"  # Position text outside bars for better visibility
+            )
+            
             fig.update_layout(
-                plot_bgcolor='rgba(0,0,0,0)',
-                paper_bgcolor='rgba(0,0,0,0)',
-                font=dict(color='#e6f1ff'),
+                plot_bgcolor='rgba(0,0,0,0)',  # Transparent background
+                paper_bgcolor='rgba(0,0,0,0)',  # Transparent paper
+                font=dict(color='#000000', size=14),  # Black font for all text
                 height=400,
                 margin=dict(l=20, r=20, t=30, b=20),
-                coloraxis_showscale=False
+                xaxis=dict(
+                    title_font=dict(color="#000000", size=16),
+                    tickfont=dict(color="#000000", size=14),
+                    gridcolor="#EEEEEE"  # Very light grey grid lines
+                ),
+                yaxis=dict(
+                    title_font=dict(color="#000000", size=16),
+                    tickfont=dict(color="#000000", size=14),
+                    gridcolor="#EEEEEE"  # Very light grey grid lines
+                )
             )
             
             st.plotly_chart(fig, use_container_width=True)
@@ -964,7 +869,7 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
         if violations:
             # Display violations in a grid
             st.markdown('<div style="margin-top: 1.5rem;">', unsafe_allow_html=True)
-                        # Display in 2 columns
+            # Display in 2 columns
             num_cols = 2
             for i in range(0, len(violations), num_cols):
                 cols = st.columns(num_cols)
@@ -975,15 +880,16 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
                         with cols[j]:
                             severity_class = f"severity-{violation['severity']}" if violation['severity'] else ""
                             
+                            # Update the expander to use colors consistently with our theme
                             with st.expander(f"{violation['severity'].upper() if violation['severity'] else 'UNKNOWN'} - {violation['desc'][:40]}...", expanded=False):
-                                # Show violation image if available
+                                # Show violation image
                                 if violation['image_path'] and os.path.exists(violation['image_path']):
                                     try:
-                                        st.image(Image.open(violation['image_path']), use_column_width=True)
+                                        st.image(Image.open(violation['image_path']), use_container_width=True)
                                     except Exception as e:
                                         st.warning(f"Could not display image: {e}")
                                 
-                                # Violation details
+                                # Violation details with updated styling
                                 st.markdown(f"""
                                 <div class="violation-card">
                                     <div class="violation-detail"><strong>Type:</strong> {violation['type'] or 'Unknown'}</div>
@@ -999,52 +905,14 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
         else:
             st.info("No violations found matching your filters. Try changing the filters or analyze more videos.")
     
-    with tabs[2]:  # Custom Query Results
-        if st.session_state.custom_queries:
-            for i, query in enumerate(st.session_state.custom_queries):
-                st.markdown(f'<p style="color: #64ffda; font-weight: 600; margin-top: 1rem;">Results for: "{query}"</p>', unsafe_allow_html=True)
-                
-                # Search for violations matching this query
-                matching_violations = search_violations_by_query(query)
-                
-                if matching_violations:
-                    st.markdown(f"""
-                    <div style="background-color: rgba(100, 255, 218, 0.1); padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <p style="color: #8892b0; font-size: 0.9rem;">Found {len(matching_violations)} matches for this query</p>
-                    </div>
-                    """, unsafe_allow_html=True)
-                    
-                    for violation in matching_violations:
-                        severity_class = f"severity-{violation['severity']}" if violation['severity'] else ""
-                        
-                        st.markdown(f"""
-                        <div class="violation-card">
-                            <div class="violation-header">{violation["desc"]}</div>
-                            <div class="violation-detail"><strong>Type:</strong> {violation["type"] or 'Unknown'}</div>
-                            <div class="violation-detail"><strong>Location:</strong> {violation["location"] or 'Not specified'}</div>
-                            <div class="violation-detail"><strong>Severity:</strong> <span class="{severity_class}">{(violation['severity'] or 'Unknown').upper()}</span></div>
-                        </div>
-                        """, unsafe_allow_html=True)
-                        
-                        # Show image if available
-                        if violation['image_path'] and os.path.exists(violation['image_path']):
-                            try:
-                                st.image(Image.open(violation['image_path']), width=400)
-                            except Exception:
-                                st.warning("Could not display image")
-                else:
-                    st.info(f"No violations found matching query: '{query}'")
-        else:
-            st.info("No custom queries were provided. Add queries in the Smart Query section to see targeted results.")
-    
-    with tabs[3]:  # Dashboard tab
+    with tabs[2]:  # Dashboard tab
         show_current_only_dashboard = st.checkbox("Show current video results only", value=True, key="dashboard_filter")
         
         # Create subtabs for the dashboard
         dashboard_tabs = st.tabs(["Trends", "Severity Analysis", "Recommendations"])
         
         with dashboard_tabs[0]:  # Trends subtab
-            st.markdown('<p style="color: #64ffda; font-weight: 600;">Violations Over Time</p>', unsafe_allow_html=True)
+            st.markdown('<p style="color: #000000; font-weight: 600;">Violations Over Time</p>', unsafe_allow_html=True)
             
             # Get trend data with filtering
             trend_data = get_violation_trends(current_only=show_current_only_dashboard)
@@ -1061,7 +929,7 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
                 fig.update_layout(
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)',
-                    font=dict(color='#e6f1ff'),
+                    font=dict(color='#333'),
                     height=400,
                     margin=dict(l=20, r=20, t=30, b=20),
                     xaxis_title="Time (seconds)",
@@ -1073,7 +941,7 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
                 st.info("No trend data available yet.")
         
         with dashboard_tabs[1]:  # Severity Analysis
-            st.markdown('<p style="color: #64ffda; font-weight: 600;">Violation Severity Distribution</p>', unsafe_allow_html=True)
+            st.markdown('<p style="color: #000000; font-weight: 600;">Violation Severity Distribution</p>', unsafe_allow_html=True)
             
             severity_data = pd.DataFrame({
                 "Severity": ["High", "Medium", "Low"],
@@ -1087,19 +955,27 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
                     names='Severity',
                     color='Severity',
                     color_discrete_map={
-                        "High": '#ff6b6b', 
-                        "Medium": '#ffcc00', 
-                        "Low": '#64ffda'
+                        "High": '#000000',      # Black for high
+                        "Medium": '#888888',    # Medium grey
+                        "Low": '#DDDDDD'        # Light grey
                     },
                     hole=0.4
+                )
+                
+                fig.update_traces(
+                    textfont=dict(color="#000000", size=14),  # Make text on pie slices black
+                    insidetextfont=dict(color="#FFFFFF")  # White text inside dark slices
                 )
                 
                 fig.update_layout(
                     plot_bgcolor='rgba(0,0,0,0)',
                     paper_bgcolor='rgba(0,0,0,0)',
-                    font=dict(color='#e6f1ff'),
+                    font=dict(color='#000000'),  # Black font for all text
                     height=400,
-                    margin=dict(l=20, r=20, t=30, b=20)
+                    margin=dict(l=20, r=20, t=30, b=20),
+                    legend=dict(
+                        font=dict(color="#000000", size=14)  # Black legend text
+                    )
                 )
                 
                 st.plotly_chart(fig, use_container_width=True)
@@ -1107,7 +983,7 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
                 st.info("No severity data available yet.")
         
         with dashboard_tabs[2]:  # Recommendations
-            st.markdown('<p style="color: #64ffda; font-weight: 600;">Top Safety Recommendations</p>', unsafe_allow_html=True)
+            st.markdown('<p style="color: #000000; font-weight: 600;">Top Safety Recommendations</p>', unsafe_allow_html=True)
             
             # Get recommendations from database
             cursor = conn.cursor()
@@ -1131,44 +1007,43 @@ if violation_stats['total'] > 0 or st.session_state.videos_analyzed:
             if recommendations:
                 for i, (recommendation, count) in enumerate(recommendations, 1):
                     st.markdown(f"""
-                    <div style="background-color: #112240; padding: 1rem; border-radius: 8px; margin-bottom: 0.8rem; border: 1px solid #1d304f;">
-                        <div style="font-weight: 600; color: #64ffda; margin-bottom: 0.5rem;">Recommendation #{i}</div>
-                        <div style="margin-bottom: 0.5rem;">{recommendation}</div>
-                        <div style="color: #8892b0; font-size: 0.8rem;">Found in {count} violation{'' if count == 1 else 's'}</div>
+                    <div style="background-color: white; padding: 1rem; border-radius: 8px; margin-bottom: 0.8rem; border: 1px solid #e5e7eb;">
+                        <div style="font-weight: 600; color: #000000; margin-bottom: 0.5rem;">Recommendation #{i}</div>
+                        <div style="margin-bottom: 0.5rem; color: #000000;">{recommendation}</div>
+                        <div style="color: #000000; font-size: 0.8rem;">Found in {count} violation{'' if count == 1 else 's'}</div>
                     </div>
                     """, unsafe_allow_html=True)
             else:
                 st.info("No safety recommendations available yet.")
 
-# Display placeholder when no videos are uploaded
+# Display placeholder when no videos are uploaded (update text colors)
 elif not uploaded_files:
     st.markdown("""
-    <div style="background-color: rgba(29, 48, 79, 0.3); border-radius: 8px; padding: 2rem; text-align: center; border: 1px dashed #1d304f; margin-top: 2rem;">
+    <div style="background-color: #f8f8f8; border-radius: 8px; padding: 2rem; text-align: center; border: 1px dashed #cccccc; margin-top: 1rem;">
         <div style="font-size: 4rem; margin-bottom: 1rem;">📤</div>
-        <p style="font-size: 1.2rem; margin-bottom: 1rem;">Upload construction site videos to begin analysis</p>
-        <p style="color: #8892b0; font-size: 0.9rem;">We'll analyze the videos for safety violations and generate a detailed report</p>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #000000;">Upload construction site videos to begin analysis</p>
+        <p style="color: #000000; font-size: 0.9rem;">We'll analyze the videos for safety violations and generate a detailed report</p>
     </div>
-          
-    <div style="background-color: #112240; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border: 1px solid #1d304f;">
-        <p style="color: #64ffda; font-weight: 600; margin-bottom: 0.8rem;">💡 Pro Tip</p>
-        <p style="margin-bottom: 1rem;">Use the Smart Query feature to specify exactly what safety violations you're looking for.</p>
-        <p style="color: #8892b0; font-size: 0.9rem;">Example queries:</p>
-        <ul style="color: #8892b0; font-size: 0.9rem; margin-left: 1.5rem;">
-            <li>Find workers on scaffolding without proper fall protection</li>
-            <li>Check for missing hard hats in active construction areas</li>
-            <li>Identify improper handling of hazardous materials</li>
-            <li>Detect workers operating machinery without proper clearance</li>
+    
+    <div style="background-color: #f8f8f8; padding: 1.5rem; border-radius: 8px; margin-top: 1rem; border: 1px solid #cccccc;">
+        <p style="color: #000000; font-weight: 600; margin-bottom: 0.8rem;">💡 Tip</p>
+        <p style="margin-bottom: 1rem; color: #000000;">Upload your construction videos for comprehensive safety violation detection.</p>
+        <p style="color: #000000; font-size: 0.9rem;">Our AI system will detect:</p>
+        <ul style="color: #000000; font-size: 0.9rem; margin-left: 1.5rem;">
+            <li>Workers without proper PPE (hard hats, vests, etc.)</li>
+            <li>Dangerous positioning on scaffolding</li>
+            <li>Improper handling of equipment and materials</li>
+            <li>Blocked emergency exits and pathways</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
 
-# Footer section
+# Updated footer with black text
 st.markdown("""
-<div style="text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #1d304f; color: #8892b0; font-size: 0.8rem;">
-    <p>VISOR - Construction Site Safety Monitor</p>
+<div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #000000; font-size: 0.8rem;">
+    <p>Construction Safety Monitor</p>
     <p>Powered by AI Vision Analytics</p>
 </div>
-</div>  <!-- Closing the "content" div from the animation -->
 """, unsafe_allow_html=True)
 
 # Clean up on session end
@@ -1187,17 +1062,22 @@ import atexit
 atexit.register(cleanup)
 
 # Add this somewhere in your interface, perhaps in a settings section
-if st.button("Clear All Previous Results"):
-    # Ask for confirmation
-    confirm = st.checkbox("I understand this will delete all previous analysis results")
-    if confirm:
-        # Delete all data
-        cursor = conn.cursor()
-        cursor.execute("DELETE FROM violations")
-        cursor.execute("DELETE FROM frames")
-        cursor.execute("DELETE FROM videos")
-        cursor.execute("DELETE FROM worker_identifiers")
-        cursor.execute("DELETE FROM worker_violations")
-        cursor.execute("DELETE FROM query_answers")
-        conn.commit()
-        st.success("Database cleared successfully")
+with st.container():
+    st.markdown("### Database Management", unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        confirm = st.checkbox("I understand this will delete all previous analysis results", key="confirm_delete")
+    
+    with col2:
+        if st.button("Clear All Previous Results", type="primary", disabled=not confirm):
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM violations")
+            cursor.execute("DELETE FROM frames")
+            cursor.execute("DELETE FROM videos")
+            cursor.execute("DELETE FROM worker_identifiers")
+            cursor.execute("DELETE FROM worker_violations")
+            cursor.execute("DELETE FROM query_answers")
+            conn.commit()
+            st.success("Database cleared successfully")

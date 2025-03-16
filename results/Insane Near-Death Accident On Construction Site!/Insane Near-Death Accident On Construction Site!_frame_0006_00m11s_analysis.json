@@ -1,27 +1,4 @@
 {
-  "violations": [
-    "Missing PPE",
-    "Blocked emergency pathways",
-    "Improper equipment stacking"
-  ],
-  "locations": [
-    "Central area near scattered wooden planks",
-    "Pathway leading to the temporary building",
-    "Area with yellow beams stacked haphazardly"
-  ],
-  "severity": [
-    "high",
-    "medium",
-    "medium"
-  ],
-  "recommendations": [
-    "Ensure all workers wear hard hats and high-visibility vests.",
-    "Clear pathways to the temporary building to ensure they are not blocked.",
-    "Rearrange and securely stack the yellow beams to prevent tipping."
-  ],
-  "worker_count": 0,
-  "worker_positions": [],
-  "worker_identifiers": [],
-  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0006_00m11s.jpg",
-  "timestamp": "2025-03-16T14:01:12.672351"
+  "error": "401 Client Error: Unauthorized for url: https://api.openai.com/v1/chat/completions",
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0006_00m11s.jpg"
 }

@@ -1,47 +1,4 @@
 {
-  "violations": [
-    "Missing PPE: Worker without a hard hat",
-    "Missing PPE: Worker without a safety vest",
-    "Improper equipment usage: Worker lifting materials without visible support"
-  ],
-  "locations": [
-    "Near the wooden structure on the left side",
-    "Near the center of the image, walking",
-    "Near the wooden structure on the left side"
-  ],
-  "severity": [
-    "high",
-    "medium",
-    "high"
-  ],
-  "recommendations": [
-    "Ensure all workers wear hard hats at all times to prevent head injuries.",
-    "Ensure all workers wear safety vests for visibility.",
-    "Use appropriate lifting equipment or techniques to prevent strain or injury."
-  ],
-  "worker_count": 3,
-  "worker_positions": [
-    "Worker standing near wooden structure with tools",
-    "Worker walking near the center",
-    "Worker lifting materials near wooden structure on the left"
-  ],
-  "worker_identifiers": [
-    {
-      "worker_id": "worker_no_helmet_yellow_vest",
-      "features": "No helmet, yellow vest, next to wooden structure",
-      "violations": [
-        0,
-        2
-      ]
-    },
-    {
-      "worker_id": "worker_no_vest_black_clothes",
-      "features": "Wearing black clothes, no vest, walking near center",
-      "violations": [
-        1
-      ]
-    }
-  ],
-  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0003_00m05s.jpg",
-  "timestamp": "2025-03-16T13:58:02.174895"
+  "error": "401 Client Error: Unauthorized for url: https://api.openai.com/v1/chat/completions",
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0003_00m05s.jpg"
 }

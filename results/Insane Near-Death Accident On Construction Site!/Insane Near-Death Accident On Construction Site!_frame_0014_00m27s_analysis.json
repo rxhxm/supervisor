@@ -1,5 +1,4 @@
 {
-  "error": "JSON parse error: Expecting value: line 1 column 1 (char 0)",
-  "raw_response": "It seems that the image provided is not a construction site image. Please provide a picture of a construction site for analysis.",
+  "error": "401 Client Error: Unauthorized for url: https://api.openai.com/v1/chat/completions",
   "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0014_00m27s.jpg"
 }

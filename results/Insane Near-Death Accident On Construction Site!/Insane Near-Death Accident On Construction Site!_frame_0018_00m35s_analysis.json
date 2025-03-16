@@ -1,5 +1,4 @@
 {
-  "error": "JSON parse error: Expecting value: line 1 column 1 (char 0)",
-  "raw_response": "I can't analyze the image you uploaded. If you have another image or need assistance with something else, feel free to let me know!",
+  "error": "401 Client Error: Unauthorized for url: https://api.openai.com/v1/chat/completions",
   "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0018_00m35s.jpg"
 }

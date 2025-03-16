@@ -1,47 +1,4 @@
 {
-  "violations": [
-    "Missing PPE: Hard hats",
-    "Worker in dangerous position",
-    "Improper equipment usage"
-  ],
-  "locations": [
-    "Workers near the large coils",
-    "Worker under the raised coil"
-  ],
-  "severity": [
-    "medium",
-    "high",
-    "medium"
-  ],
-  "recommendations": [
-    "Ensure all workers wear hard hats at all times on site.",
-    "Prohibit workers from standing under suspended loads.",
-    "Use proper lifting equipment and follow standard procedures for moving heavy items."
-  ],
-  "worker_count": 7,
-  "worker_positions": [
-    "Near large coils and loading area",
-    "Walking towards the back of the site",
-    "Standing close to equipment"
-  ],
-  "worker_identifiers": [
-    {
-      "worker_id": "worker_dark_clothes_1",
-      "features": "Dark clothing, no visible helmet",
-      "violations": [
-        "0",
-        "1"
-      ]
-    },
-    {
-      "worker_id": "worker_under_coil",
-      "features": "Close to rolled coils, under raised coil",
-      "violations": [
-        "1",
-        "2"
-      ]
-    }
-  ],
-  "image_path": "data/frames/videoplayback/videoplayback_frame_0005_00m09s.jpg",
-  "timestamp": "2025-03-16T14:42:16.418073"
+  "error": "401 Client Error: Unauthorized for url: https://api.openai.com/v1/chat/completions",
+  "image_path": "data/frames/videoplayback/videoplayback_frame_0005_00m09s.jpg"
 }

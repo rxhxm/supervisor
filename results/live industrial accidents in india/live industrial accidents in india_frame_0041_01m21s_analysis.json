@@ -1,0 +1,49 @@
+{
+  "violations": [
+    "Missing PPE: No hard hats or gloves.",
+    "Worker in dangerous position: Close proximity to open machinery.",
+    "Improper equipment usage: No protective barriers around machinery."
+  ],
+  "locations": [
+    "Center of the image near the machinery.",
+    "Right side where the worker is operating the machine.",
+    "General area with close machinery."
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Provide and enforce the use of hard hats, gloves, and other necessary PPE.",
+    "Ensure that workers maintain a safe distance from running machinery and use protective barriers.",
+    "Implement barriers or guards to separate operators from equipment in operation."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker near the center with machinery",
+    "One worker on the right operating the machine"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_white_shirt_no_ppe",
+      "features": "White shirt, no visible PPE",
+      "violations": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "worker_id": "worker_blue_pants_no_ppe",
+      "features": "Blue pants, no visible PPE",
+      "violations": [
+        "0",
+        "1",
+        "2"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0041_01m21s.jpg",
+  "timestamp": "2025-03-16T14:09:05.720976"
+}

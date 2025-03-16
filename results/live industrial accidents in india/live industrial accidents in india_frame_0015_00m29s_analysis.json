@@ -1,0 +1,50 @@
+{
+  "violations": [
+    "Missing PPE: One worker not wearing a hard hat.",
+    "Missing PPE: One worker not wearing safety gloves.",
+    "Improper equipment usage: Worker operating machinery without visible PPE.",
+    "Blocked pathways: Equipment stacked close to the machinery restricting movement."
+  ],
+  "locations": [
+    "Front of the machinery near the bottom right corner.",
+    "Operator's hands near the machine in the bottom right.",
+    "Directly in front of the large machinery to the right.",
+    "Between the left machinery and stacked items in the center."
+  ],
+  "severity": [
+    "medium",
+    "medium",
+    "high",
+    "low"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate hard hats at all times.",
+    "Provide and mandate the use of safety gloves when operating machinery.",
+    "Ensure operators use full PPE, including gloves and eye protection.",
+    "Rearrange equipment to maintain clear pathways for safe movement."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker in front of the large machine on the right.",
+    "Two workers near the top left beside another machine."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_1",
+      "features": "Blue shirt, not wearing a hard hat, operating machinery",
+      "violations": [
+        "0",
+        "2"
+      ]
+    },
+    {
+      "worker_id": "worker_pink_shirt_2",
+      "features": "Pink shirt, no visible gloves",
+      "violations": [
+        "1"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0015_00m29s.jpg",
+  "timestamp": "2025-03-16T14:08:38.618344"
+}

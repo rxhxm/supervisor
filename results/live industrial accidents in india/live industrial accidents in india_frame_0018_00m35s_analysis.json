@@ -1,0 +1,54 @@
+{
+  "violations": [
+    "Missing PPE: Workers not wearing hard hats",
+    "Improper equipment usage: Worker operating machine without visible PPE",
+    "Blocked emergency exit: Path cluttered with materials"
+  ],
+  "locations": [
+    "Center area with multiple workers",
+    "Right side at the machine control panel",
+    "Pathway leading to the exit on the left"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE, including hard hats and safety vests",
+    "Verify that all machine operators use proper PPE and training",
+    "Clear the pathways and ensure exits are unobstructed at all times"
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Two workers at the central machine",
+    "One worker at the machine control panel on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Wearing a blue shirt, no helmet",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_turquoise_shirt_no_helmet",
+      "features": "Wearing a turquoise shirt, helping another worker",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_black_shirt_no_helmet",
+      "features": "Wearing a black shirt, operating machine",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0018_00m35s.jpg",
+  "timestamp": "2025-03-16T14:05:58.156477"
+}

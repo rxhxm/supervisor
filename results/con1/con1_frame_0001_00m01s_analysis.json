@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Missing PPE: One worker appears to not be wearing a hard hat.",
+    "Improper equipment usage: A worker is carrying a large panel without assistance or proper lifting equipment.",
+    "Workers in dangerous positions: A worker is standing close to a stack of potentially unstable materials."
+  ],
+  "locations": [
+    "Central area: Worker without a hard hat.",
+    "Left side: Worker carrying a large panel.",
+    "Near the stacked materials on the right: Worker standing near the hazard."
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear the appropriate PPE, including hard hats, at all times.",
+    "Use lifting equipment or have additional personnel assist with carrying large panels.",
+    "Rearrange or secure stacked materials to minimize the risk of collapse and ensure workers maintain a safe distance."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0001_00m01s.jpg",
+  "timestamp": "2025-03-16T01:42:47.830516"
+}

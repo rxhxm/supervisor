@@ -1,0 +1,28 @@
+{
+  "violations": [
+    "Workers not wearing hard hats",
+    "Worker in dangerous position under falling objects",
+    "Debris scattered on the ground",
+    "Materials improperly secured, leading to potential falling hazards"
+  ],
+  "locations": [
+    "Throughout the construction site",
+    "Center of the image, where wooden planks are falling",
+    "Ground level, scattered around the site",
+    "Wooden planks at the top portion of the site"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers are equipped with proper PPE including hard hats and vests.",
+    "Keep workers out of areas with potential falling hazards and use proper safety barriers.",
+    "Regularly clean the site to remove debris and reduce tripping hazards.",
+    "Secure all materials properly to prevent them from falling and causing injuries."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0004_00m07s.jpg",
+  "timestamp": "2025-03-16T01:42:39.593208"
+}

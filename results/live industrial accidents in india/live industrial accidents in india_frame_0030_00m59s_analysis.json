@@ -1,0 +1,70 @@
+{
+  "violations": [
+    {
+      "violation": "Missing PPE (hard hats)",
+      "location": "Center and left of image",
+      "severity": "medium",
+      "recommendation": "Ensure all workers wear hard hats at all times."
+    },
+    {
+      "violation": "Workers in potentially dangerous positions (near operating machinery without protective barriers)",
+      "location": "Left side near green machinery",
+      "severity": "high",
+      "recommendation": "Install protective barriers and ensure safe distances are maintained."
+    },
+    {
+      "violation": "Improper equipment usage (stacked materials could pose a hazard)",
+      "location": "Front center of image",
+      "severity": "medium",
+      "recommendation": "Ensure all materials are securely stacked and stored to prevent tipping."
+    }
+  ],
+  "locations": [
+    "Center and left of image",
+    "Left side near green machinery",
+    "Front center of image"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times.",
+    "Install protective barriers and ensure safe distances are maintained.",
+    "Ensure all materials are securely stacked and stored to prevent tipping."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker bending down near green machinery.",
+    "One worker standing at the right operating a machine.",
+    "One worker near the green machinery in the center."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_left",
+      "features": "blue shirt, bending down near green machinery",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_right",
+      "features": "standing, operating machine, no visible PPE",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_gray_shirt_center",
+      "features": "gray shirt, near green machinery",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0030_00m59s.jpg",
+  "timestamp": "2025-03-16T14:12:37.826761"
+}

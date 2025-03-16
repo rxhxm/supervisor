@@ -1,0 +1,48 @@
+{
+  "violations": [
+    "Missing hard hat",
+    "Workers in potentially dangerous position",
+    "Improper stacking of materials"
+  ],
+  "locations": [
+    "Front center of the image",
+    "Center of the image",
+    "Right side of the image"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times.",
+    "Workers should maintain a safe distance from potential fall hazards.",
+    "Materials should be stacked securely to prevent tipping or falling."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "Front center, bending",
+    "Center, standing",
+    "Right, standing",
+    "Front while walking"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, missing hard hat",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_yellow_helmet",
+      "features": "Yellow helmet, standing near materials",
+      "violations": [
+        1,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0012_00m23s.jpg",
+  "timestamp": "2025-03-16T13:58:30.231472"
+}

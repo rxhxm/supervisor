@@ -1,0 +1,67 @@
+{
+  "violations": [
+    "Missing PPE: Several workers are not wearing hard hats or reflective vests.",
+    "Workers in dangerous positions: One worker is in close proximity to a machine without protective barriers.",
+    "Improper equipment usage: Equipment appears to be in use without visible guarding.",
+    "Blocked emergency pathways: The path around the machinery is cluttered with materials."
+  ],
+  "locations": [
+    "Throughout the workspace, particularly near the larger machines.",
+    "Near the large machine at the back of the image.",
+    "Around machinery and equipment operation areas.",
+    "Pathways in the middle and right side of the image."
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are equipped with PPE such as hard hats and reflective vests.",
+    "Install barriers or maintain safe distances from operational machines.",
+    "Ensure equipment has proper guarding and safety features enabled.",
+    "Clear pathways to ensure accessibility and safety compliance."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "One worker standing near the large machine at the back.",
+    "One worker near the right side of the image, seemingly operating machinery.",
+    "Two workers on the left side engaged in a task."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, no hard hat, near large machine",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_white_shirt_no_helmet",
+      "features": "White shirt, no hard hat, operating machinery",
+      "violations": [
+        0,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_red_shirt_no_helmet_1",
+      "features": "Red shirt, left side, no hard hat",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_red_shirt_no_helmet_2",
+      "features": "Red shirt, left side closer to machinery, no hard hat",
+      "violations": [
+        0,
+        3
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0010_00m19s.jpg",
+  "timestamp": "2025-03-16T14:04:28.982181"
+}

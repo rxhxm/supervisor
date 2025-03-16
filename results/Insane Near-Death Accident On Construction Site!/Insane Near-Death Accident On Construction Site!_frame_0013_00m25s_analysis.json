@@ -1,0 +1,5 @@
+{
+  "error": "JSON parse error: Expecting value: line 1 column 1 (char 0)",
+  "raw_response": "I'm unable to analyze the image you\u2019ve provided for safety violations. The image does not seem to depict a construction site. Please ensure the image uploaded is relevant to a construction site scenario, and I would be happy to help with any analysis you need.",
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0013_00m25s.jpg"
+}

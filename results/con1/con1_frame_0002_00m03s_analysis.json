@@ -1,0 +1,28 @@
+{
+  "violations": [
+    "Worker without hard hat",
+    "Worker without safety vest",
+    "Improper stacking of materials",
+    "Blocked pathway"
+  ],
+  "locations": [
+    "Worker in the middle left without a hard hat",
+    "Worker in the middle left without a safety vest",
+    "Materials stacked unsafely on the right side",
+    "Obstructed pathway near stacked materials on the right"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing hard hats at all times.",
+    "Ensure all workers are wearing safety vests to increase visibility.",
+    "Reorganize materials to be stable and secure.",
+    "Clear pathways to ensure emergency and general access is not blocked."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0002_00m03s.jpg",
+  "timestamp": "2025-03-16T01:43:03.448762"
+}

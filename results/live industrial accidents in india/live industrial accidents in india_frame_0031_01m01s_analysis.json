@@ -1,0 +1,57 @@
+{
+  "violations": [
+    "Missing PPE: no hard hats or vests",
+    "Workers in potentially dangerous positions near heavy machinery",
+    "Improper equipment usage: cluttered workspace with tools on the floor"
+  ],
+  "locations": [
+    "Throughout the image",
+    "Left and center near large machinery",
+    "Near machines and stacks of parts"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE including hard hats and high-visibility vests.",
+    "Maintain a safe distance from operating machinery and ensure machines have proper guarding.",
+    "Organize the workspace and remove unnecessary items from the floor to minimize trip hazards."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "One worker is operating machinery on the left",
+    "One worker bending near machinery in the center",
+    "One worker backing away from machinery near right",
+    "One worker near stacked parts in the foreground"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_ppe_1",
+      "features": "no visible PPE, blue shirt, near large machinery on left",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_2",
+      "features": "no visible PPE, bending near machinery in center",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_3",
+      "features": "no visible PPE, near stacked parts in foreground",
+      "violations": [
+        "0",
+        "2"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0031_01m01s.jpg",
+  "timestamp": "2025-03-16T14:10:01.656503"
+}

@@ -1,0 +1,63 @@
+{
+  "violations": [
+    {
+      "description": "Missing PPE",
+      "location": "Near the large machinery on the left side of the image",
+      "severity": "high",
+      "recommendation": "Ensure all workers wear appropriate PPE such as hard hats, gloves, and safety vests."
+    },
+    {
+      "description": "Worker in a dangerous position",
+      "location": "Worker bending over near machinery at the top left",
+      "severity": "medium",
+      "recommendation": "Ensure workers maintain a safe distance from operational machinery and do not work in unsafe positions."
+    },
+    {
+      "description": "Improper footwear",
+      "location": "Center-left worker with visible feet",
+      "severity": "medium",
+      "recommendation": "Workers should wear safety boots to protect their feet from falling objects or sharp items."
+    }
+  ],
+  "locations": [
+    "Near the large machinery on the left side of the image",
+    "Worker bending over near machinery at the top left",
+    "Center-left worker with visible feet"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE such as hard hats, gloves, and safety vests.",
+    "Ensure workers maintain a safe distance from operational machinery and do not work in unsafe positions.",
+    "Workers should wear safety boots to protect their feet from falling objects or sharp items."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "Near large machinery on the left",
+    "Bending over near machinery at the top left",
+    "Standing in the center",
+    "Operating machine on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_light_shirt_1",
+      "features": "Light-colored shirt, bending over near machinery",
+      "violations": [
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_blue_shirt_no_helmet_2",
+      "features": "Blue shirt, no helmet near the large machine",
+      "violations": [
+        0,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0023_00m45s.jpg",
+  "timestamp": "2025-03-16T14:13:18.304724"
+}

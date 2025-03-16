@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Missing PPE: Hard hats",
+    "Workers in potentially dangerous positions",
+    "Improperly stacked materials"
+  ],
+  "locations": [
+    "Workers near center of the image lack hard hats",
+    "Workers near center of the image walking in open construction area",
+    "Improperly stacked materials on right side of image"
+  ],
+  "severity": [
+    "medium",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times on site",
+    "Implement marked pathways and barriers for safe navigation",
+    "Properly stack and secure materials to prevent falling"
+  ],
+  "image_path": "data/frames/con1/con1_frame_0000_00m00s.jpg",
+  "timestamp": "2025-03-16T01:43:39.669142"
+}

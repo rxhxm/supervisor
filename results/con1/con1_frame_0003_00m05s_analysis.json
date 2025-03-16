@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Missing PPE (hard hats, safety vests)",
+    "Workers in potentially dangerous positions (unsecured areas near materials)",
+    "Improper stacking of materials"
+  ],
+  "locations": [
+    "Workers in the center and left without visible hard hats or vests",
+    "Workers in the center walking between stacked materials",
+    "Stacked materials on the right with potential risk of collapse"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE, including hard hats and safety vests.",
+    "Restrict access to unsecured areas and ensure all pathways are clear and safe.",
+    "Properly secure and organize materials to prevent collapse or accidents."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0003_00m05s.jpg",
+  "timestamp": "2025-03-16T01:43:22.823284"
+}

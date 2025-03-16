@@ -1,0 +1,51 @@
+{
+  "violations": [
+    "Missing hard hats",
+    "Missing safety vests"
+  ],
+  "locations": [
+    "Center and left of the image"
+  ],
+  "severity": [
+    "high",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats while on site.",
+    "Ensure all workers wear safety vests for visibility."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker on the left near wooden planks",
+    "One worker in the center carrying a large panel",
+    "One worker on the right near metal structures"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_left_beige_jacket",
+      "features": "Beige jacket, not wearing a hard hat or safety vest",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_center_carrying_panel",
+      "features": "Carrying large panel, not wearing a hard hat or safety vest",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_right_dark_clothing",
+      "features": "Dark clothing, not wearing a hard hat or safety vest",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0001_00m03s.jpg",
+  "timestamp": "2025-03-16T13:57:52.444480"
+}

@@ -1,0 +1,47 @@
+{
+  "violations": [
+    "Missing PPE",
+    "Worker in dangerous position",
+    "Improper equipment usage"
+  ],
+  "locations": [
+    "Center of the image, near machinery",
+    "Left side of the image, by the large machine",
+    "Throughout the workshop space"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear proper PPE including hard hats and gloves.",
+    "Reposition workers to avoid dangerous positions or close proximity to moving parts.",
+    "Provide proper training for handling and operating machinery safely."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "Worker sitting near machinery in middle",
+    "Worker standing by machine on the left"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_orange_shirt_1",
+      "features": "orange shirt near center",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_left_1",
+      "features": "no visible PPE, standing at left",
+      "violations": [
+        0,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0001_00m01s.jpg",
+  "timestamp": "2025-03-16T14:11:59.552761"
+}

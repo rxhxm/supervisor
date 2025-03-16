@@ -1,0 +1,48 @@
+{
+  "violations": [
+    "Missing PPE: Several workers are not wearing hard hats.",
+    "Missing PPE: Some workers are not wearing high-visibility vests.",
+    "Improper equipment usage: Worker operating machinery without visible safety gear."
+  ],
+  "locations": [
+    "Center near machinery",
+    "Left side of the image near equipment",
+    "Operating panel at the right side of the image"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats to protect against head injuries.",
+    "Ensure all workers are wearing high-visibility vests for increased safety.",
+    "Ensure workers use proper safety gear, such as gloves, when operating machinery."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "Standing near machinery center",
+    "Kneeling near equipment",
+    "Standing at operating panel",
+    "Leaning over equipment left side"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, missing helmet",
+      "violations": [
+        "0",
+        "2"
+      ]
+    },
+    {
+      "worker_id": "worker_white_shirt_no_vest",
+      "features": "White shirt, no vest",
+      "violations": [
+        "1"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0051_01m41s.jpg",
+  "timestamp": "2025-03-16T14:12:23.505442"
+}

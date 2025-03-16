@@ -1,0 +1,63 @@
+{
+  "violations": [
+    "Missing PPE: Workers are not wearing hard hats or high-visibility vests.",
+    "Workers in dangerous positions: Workers are operating near heavy machinery without visible safety barriers.",
+    "Improper equipment usage: Workers are not using gloves despite handling potentially hazardous equipment/components."
+  ],
+  "locations": [
+    "Throughout the construction site.",
+    "Near the large industrial machines in the foreground and background."
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are provided with and wear proper PPE including hard hats and high-visibility vests.",
+    "Install safety barriers or signs near hazardous machinery to prevent accidents.",
+    "Provide and enforce the use of gloves when handling machinery or hazardous components."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "One worker standing near the large machine in the foreground operating controls.",
+    "Two workers sitting and working near the machine on the right.",
+    "One worker walking away from the machinery area on the left."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_ppe",
+      "features": "blue shirt, operating controls on large machine",
+      "violations": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "worker_id": "worker_white_shirt_no_ppe",
+      "features": "white shirt, walking away from machinery",
+      "violations": [
+        "0"
+      ]
+    },
+    {
+      "worker_id": "worker_orange_shirt_no_ppe",
+      "features": "orange shirt, seated near machine",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_grey_pants_no_ppe",
+      "features": "grey pants, assisting near seated position",
+      "violations": [
+        "0",
+        "1"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0049_01m37s.jpg",
+  "timestamp": "2025-03-16T14:06:51.681458"
+}

@@ -1,0 +1,52 @@
+{
+  "violations": [
+    "Missing PPE: Workers without helmets or vests.",
+    "Workers in dangerous positions: Worker is standing close to operating machinery without protection.",
+    "Improper equipment usage: Tools and materials scattered on the ground, posing trip hazards."
+  ],
+  "locations": [
+    "Left side of the image near large machinery.",
+    "Near the machinery in the center.",
+    "Throughout the work area."
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE including helmets and vests.",
+    "Maintain a safe distance from operating machinery and use appropriate barriers.",
+    "Organize the workspace to remove trip hazards and ensure proper storage of tools."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "One worker standing near large machinery on the left.",
+    "Another worker crouching close to the machinery in the center.",
+    "A worker operating or observing the machine at the right side."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_1",
+      "features": "Blue shirt, standing near machinery",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_black_clothes_2",
+      "features": "Black clothes, crouching near machinery",
+      "violations": [
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_white_shirt_3",
+      "features": "White shirt, operating machine at right",
+      "violations": []
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0013_00m25s.jpg",
+  "timestamp": "2025-03-16T14:10:29.976826"
+}

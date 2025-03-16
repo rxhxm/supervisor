@@ -1,0 +1,57 @@
+{
+  "violations": [
+    "Missing PPE: Workers lack hard hats and vests.",
+    "Workers in potentially dangerous positions near machinery without proper safety barriers.",
+    "Improper equipment usage: No visible lockout/tagout procedures on machines under maintenance."
+  ],
+  "locations": [
+    "Center of the image near the machinery",
+    "Near the large machines on the left side",
+    "Areas adjacent to the operating machines"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE including hard hats and reflective vests.",
+    "Install protective barriers around machinery and ensure safe distances.",
+    "Implement and enforce lockout/tagout procedures for machines under maintenance."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "One worker near the left-side machinery, bending down",
+    "One worker standing near central machinery in a greenish shirt",
+    "One worker operating the machine on the right in a blue shirt",
+    "One additional worker in background near the machinery"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_green_shirt",
+      "features": "greenish shirt, central area near machinery",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_blue_shirt",
+      "features": "blue shirt, operating machine on the right",
+      "violations": [
+        0,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_near_left_machine",
+      "features": "bending down near left machinery",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0032_01m03s.jpg",
+  "timestamp": "2025-03-16T14:11:19.422906"
+}

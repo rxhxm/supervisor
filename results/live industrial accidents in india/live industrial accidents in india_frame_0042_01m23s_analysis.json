@@ -1,0 +1,35 @@
+{
+  "violations": [
+    "Missing PPE: Worker not wearing hard hat",
+    "Improper equipment usage: Worker using machinery without visible guarding"
+  ],
+  "locations": [
+    "Near the large machine on the right",
+    "At the machine being operated by the worker in the blue shirt"
+  ],
+  "severity": [
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate personal protective equipment, including hard hats.",
+    "Install or verify the presence of safety guards on machinery and provide training on proper usage."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker seated near the center on the ground, potentially adjusting or working on materials",
+    "One worker standing at the machine on the right, operating it"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Wearing a blue shirt, standing at the machine on the right",
+      "violations": [
+        0,
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0042_01m23s.jpg",
+  "timestamp": "2025-03-16T14:07:20.311683"
+}

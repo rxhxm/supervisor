@@ -1,0 +1,24 @@
+{
+  "violations": [
+    "Missing PPE",
+    "Workers near unstable debris",
+    "Improper material organization"
+  ],
+  "locations": [
+    "Center of the image where workers are present",
+    "Near the wooden debris and scattered materials",
+    "Throughout the site with scattered materials"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing appropriate PPE such as hard hats and vests.",
+    "Clear the area of unstable debris and ensure materials are securely stacked.",
+    "Organize materials to prevent tripping hazards and ensure clear pathways."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0008_00m15s.jpg",
+  "timestamp": "2025-03-16T01:42:29.139786"
+}

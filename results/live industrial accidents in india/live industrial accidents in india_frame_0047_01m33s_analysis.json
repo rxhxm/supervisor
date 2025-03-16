@@ -1,0 +1,57 @@
+{
+  "violations": [
+    "Missing PPE (hard hats) for one worker",
+    "Worker in potentially dangerous position near machine",
+    "Improper equipment usage (workers too close to active machine)",
+    "Obstructed path with stacked materials"
+  ],
+  "locations": [
+    "Worker near the machine with light shining - no hard hat",
+    "Worker close to the open machine compartment",
+    "Workers working closely to operational machines on the right side",
+    "Pathway blocked by stacked parts in front of the machine on the right"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times",
+    "Maintain a safe distance from operational machines",
+    "Train workers on proper machine operation protocols",
+    "Clear pathways of any obstructive materials for easy and safe movement"
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Near machine with light on right",
+    "Crouched on floor near middle machine",
+    "Standing in front of the open machine on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, standing in front of open machine",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_sitting_ground",
+      "features": "Crouched on floor, near center",
+      "violations": []
+    },
+    {
+      "worker_id": "worker_gray_shirt",
+      "features": "Gray shirt, near machine with light",
+      "violations": [
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0047_01m33s.jpg",
+  "timestamp": "2025-03-16T14:05:33.137867"
+}

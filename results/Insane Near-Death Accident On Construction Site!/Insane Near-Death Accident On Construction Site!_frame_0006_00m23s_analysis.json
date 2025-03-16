@@ -1,0 +1,48 @@
+{
+  "violations": [
+    "Missing PPE: Worker without a hard hat",
+    "Workers in dangerous positions: Worker near unstable debris",
+    "Improper equipment usage: Worker using ladder improperly"
+  ],
+  "locations": [
+    "Front-left of the image",
+    "Center of the image",
+    "Near the right edge of the image"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times.",
+    "Stabilize debris and provide clear walking paths.",
+    "Use ladders properly by following manufacturer's guidelines."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "Front-left, bending and near debris",
+    "Center, standing near unstable materials",
+    "Near right edge, using a ladder",
+    "Right of center, standing near materials"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_black_jacket_no_helmet",
+      "features": "Black jacket, no helmet",
+      "violations": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "worker_id": "worker_yellow_jacket",
+      "features": "Yellow jacket, using ladder improperly",
+      "violations": [
+        "2"
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0006_00m23s.jpg",
+  "timestamp": "2025-03-16T13:59:15.537393"
+}

@@ -1,0 +1,71 @@
+{
+  "violations": [
+    {
+      "violation": "Missing hard hat",
+      "worker_id": "worker_yellow_vest_no_helmet",
+      "location": "Near stacked metal frames",
+      "severity": "high",
+      "recommendation": "Ensure all workers wear hard hats at all times."
+    },
+    {
+      "violation": "Missing PPE - gloves",
+      "worker_id": "worker_no_gloves",
+      "location": "Near entrance of construction site",
+      "severity": "medium",
+      "recommendation": "Provide and enforce the use of gloves when handling materials."
+    },
+    {
+      "violation": "Workers in dangerous position - proximity to unsecured items",
+      "worker_id": "multiple_workers",
+      "location": "Around stacked metal frames",
+      "severity": "high",
+      "recommendation": "Ensure materials are secured and designate safe zones for walking and standing."
+    }
+  ],
+  "locations": [
+    "Near stacked metal frames",
+    "Near entrance of construction site",
+    "Around stacked metal frames"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times.",
+    "Provide and enforce the use of gloves when handling materials.",
+    "Ensure materials are secured and designate safe zones for walking and standing."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "Near stacked metal frames",
+    "Near entrance of construction site",
+    "Walking between stacked metal frames"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_yellow_vest_no_helmet",
+      "features": "Yellow vest, no helmet, near metal frames",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_no_gloves",
+      "features": "No gloves, near entrance",
+      "violations": [
+        1
+      ]
+    },
+    {
+      "worker_id": "multiple_workers",
+      "features": "Multiple workers near stacked metal frames",
+      "violations": [
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0000_00m00s.jpg",
+  "timestamp": "2025-03-16T13:58:49.293013"
+}

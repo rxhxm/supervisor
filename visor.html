@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISOR - Construction Safety Monitor</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a192f; /* Dark navy background */
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Safety lens styles */
+        .safety-lens {
+            position: fixed;
+            background: radial-gradient(
+                circle at center,
+                #ffcc00 0%, /* Bright yellow center */
+                #ff9d00 40%, /* Orange mid */
+                #ff7b00 70%, /* Darker orange */
+                #ff6b00 100% /* Edge color */
+            );
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(255, 204, 0, 0.6);
+            z-index: 1000;
+            transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Lens reflection effect */
+        .lens-reflection {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.4) 0%,
+                rgba(255, 255, 255, 0) 50%);
+            transform: translateY(-5%) translateX(-5%) rotate(-10deg);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Lens pattern overlay */
+        .lens-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05) 0px,
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 6px
+            );
+            opacity: 0.2;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Logo text style */
+        .logo-text {
+            color: #0a192f;
+            font-weight: bold;
+            font-size: 2vw;
+            letter-spacing: 1px;
+            transform: scale(0);
+            transition: transform 0.5s ease-in-out;
+            transition-delay: 1s;
+            text-align: center;
+        }
+
+        /* Main content container that appears after animation */
+        .content-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            padding: 40px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            transition-delay: 1.5s;
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-left: 20px;
+        }
+
+        .site-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-left: 20px;
+        }
+
+        /* Main area styling */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 160px);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(to right, #ffcc00, #ff6b00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .upload-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 80%;
+            max-width: 800px;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 2px dashed rgba(255, 204, 0, 0.3);
+        }
+
+        .upload-button {
+            background-color: #ff9d00;
+            color: #0a192f;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background-color: #ffcc00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #b3c5ef;
+        }
+
+        /* For smaller screens */
+        @media (max-width: 768px) {
+            .upload-container {
+                width: 95%;
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .site-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Safety lens that will animate -->
+    <div class="safety-lens" id="safetyLens">
+        <div class="lens-reflection"></div>
+        <div class="lens-pattern"></div>
+        <div class="logo-text">VISOR</div>
+    </div>
+
+    <!-- Main content that appears after animation -->
+    <div class="content-container" id="contentContainer">
+        <header>
+            <h2 class="site-title">Construction Safety Monitor</h2>
+        </header>
+        
+        <main>
+            <h1>Detect Safety Violations with AI</h1>
+            <p>Upload construction site videos for instant safety analysis. Our advanced AI detects PPE violations, hazardous positions, and other safety concerns in real-time.</p>
+            
+            <div class="upload-container">
+                <p>Drag and drop your video files here, or click to browse</p>
+                <button class="upload-button">Upload Videos</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const safetyLens = document.getElementById('safetyLens');
+            const logoText = document.querySelector('.logo-text');
+            const contentContainer = document.getElementById('contentContainer');
+            
+            // Initial state - lens covers the whole screen
+            safetyLens.style.width = '100vw';
+            safetyLens.style.height = '100vh';
+            safetyLens.style.top = '0';
+            safetyLens.style.left = '0';
+            safetyLens.style.transform = 'translate(0, 0)';
+            
+            // Set a timeout to start the animation
+            setTimeout(function() {
+                // Animate the lens to the top right corner
+                safetyLens.style.width = '80px';
+                safetyLens.style.height = '80px';
+                safetyLens.style.top = '20px';
+                safetyLens.style.right = '20px';
+                safetyLens.style.left = 'auto';
+                
+                // Show the logo text inside the lens
+                setTimeout(function() {
+                    logoText.style.transform = 'scale(1)';
+                    logoText.style.fontSize = '16px';
+                }, 800);
+                
+                // Show the main content
+                setTimeout(function() {
+                    contentContainer.style.opacity = '1';
+                }, 1000);
+                
+            }, 1500); // Delay before starting the animation
+        });
+        
+        // Simple functionality for the upload button
+        document.querySelector('.upload-button').addEventListener('click', function() {
+            alert('Upload functionality would go here in a real implementation');
+        });
+    </script>
+</body>
+</html>

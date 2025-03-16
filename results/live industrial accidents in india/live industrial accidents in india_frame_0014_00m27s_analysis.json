@@ -1,0 +1,56 @@
+{
+  "violations": [
+    "Missing hard hats",
+    "Workers in potentially dangerous positions close to machines",
+    "Improper equipment storage causing potential tripping hazard"
+  ],
+  "locations": [
+    "Throughout the workspace",
+    "Near the large machine on the left",
+    "Near the doorway with stacked items"
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing hard hats.",
+    "Maintain a safe distance from operating machines. Use barriers if necessary.",
+    "Clear the path and properly store equipment to avoid tripping hazards."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Near the large machine on the left",
+    "By the control panel of the machine on the right",
+    "Standing in the middle area near the doorway with stacked items"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Blue shirt, no hard hat",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_pink_shirt_no_helmet",
+      "features": "Pink shirt, no hard hat",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_dark_shirt_no_helmet",
+      "features": "Dark shirt, no hard hat",
+      "violations": [
+        0,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0014_00m27s.jpg",
+  "timestamp": "2025-03-16T14:04:49.798066"
+}

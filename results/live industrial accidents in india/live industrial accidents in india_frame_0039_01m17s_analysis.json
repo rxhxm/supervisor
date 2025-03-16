@@ -1,0 +1,14 @@
+{
+  "violations": [],
+  "locations": [],
+  "severity": [],
+  "recommendations": [],
+  "worker_count": 2,
+  "worker_positions": [
+    "Worker sitting near a machine on the left side",
+    "Worker standing in front of a machine on the right side"
+  ],
+  "worker_identifiers": [],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0039_01m17s.jpg",
+  "timestamp": "2025-03-16T14:11:25.197492"
+}

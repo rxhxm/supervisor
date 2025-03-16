@@ -1,0 +1,56 @@
+{
+  "violations": [
+    "Missing PPE",
+    "Workers in dangerous positions"
+  ],
+  "locations": [
+    "Center of the image around the CNC machine",
+    "Left side near the large machinery"
+  ],
+  "severity": [
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are wearing appropriate PPE including hard hats, vests, and gloves.",
+    "Rearrange workspaces or provide proper barriers to keep workers away from dangerous areas."
+  ],
+  "worker_count": 4,
+  "worker_positions": [
+    "Worker operating CNC machine at the center",
+    "Two workers near large machinery on the left",
+    "Worker walking towards the center from the left"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_ppe_1",
+      "features": "worker operating CNC machine wearing blue shirt and no visible PPE",
+      "violations": [
+        0
+      ]
+    },
+    {
+      "worker_id": "worker_near_machinery_1",
+      "features": "worker in white shirt near large machinery",
+      "violations": [
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_near_machinery_2",
+      "features": "worker in blue shirt near large machinery",
+      "violations": [
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_no_ppe_2",
+      "features": "worker walking towards the CNC machine from left, wearing no visible PPE",
+      "violations": [
+        0
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0016_00m31s.jpg",
+  "timestamp": "2025-03-16T14:07:30.613522"
+}

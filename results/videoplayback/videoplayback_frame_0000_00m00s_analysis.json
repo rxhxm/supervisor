@@ -1,0 +1,40 @@
+{
+  "violations": [
+    "Worker missing PPE (no hard hat, high-visibility vest).",
+    "Worker in dangerous position near suspended load."
+  ],
+  "locations": [
+    "Near the center of the image, in front of suspended coil.",
+    "Near the center of the image, under the crane holding the coil."
+  ],
+  "severity": [
+    "high",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE (hard hats, vests) at all times.",
+    "Avoid working directly under suspended loads and use proper rigging and signaling techniques."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "Standing near suspended coil in the center",
+    "Walking towards a work area on the left side"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_ppe_near_coil",
+      "features": "No hard hat, no high-visibility vest",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_walking_no_ppe",
+      "features": "Walking with indistinct features, no hard hat",
+      "violations": []
+    }
+  ],
+  "image_path": "data/frames/videoplayback/videoplayback_frame_0000_00m00s.jpg",
+  "timestamp": "2025-03-16T14:41:46.365111"
+}

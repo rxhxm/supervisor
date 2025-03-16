@@ -1,0 +1,50 @@
+{
+  "violations": [
+    "Missing PPE - no hard hats",
+    "Workers in unsafe positions - standing on debris",
+    "Improper equipment usage - unsecured items",
+    "Blocked pathways - cluttered with debris"
+  ],
+  "locations": [
+    "Central area of the construction site",
+    "Area with scattered wooden planks and debris",
+    "Surrounding the stacked metal and wooden items",
+    "General walkways blocked by disorderly materials"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium",
+    "high"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats and appropriate PPE at all times.",
+    "Clear paths and walkways of debris and materials to prevent trips or falls.",
+    "Secure all loose items and debris to prevent accidental falls or injuries.",
+    "Organize materials and maintain clear routes for emergency access."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker standing near the center among debris",
+    "Another worker closer to the tool storage area on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_helmet_1",
+      "features": "no hard hat, standing near central debris",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_no_helmet_green_jacket",
+      "features": "no hard hat, green jacket, near tool area",
+      "violations": [
+        0
+      ]
+    }
+  ],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0008_00m15s.jpg",
+  "timestamp": "2025-03-16T14:00:03.045882"
+}

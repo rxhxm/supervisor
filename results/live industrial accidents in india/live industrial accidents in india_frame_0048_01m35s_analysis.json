@@ -1,0 +1,62 @@
+{
+  "violations": [
+    {
+      "description": "Missing PPE - worker not wearing hard hat",
+      "location": "Center left near machine",
+      "severity": "medium",
+      "recommendation": "Ensure all workers wear hard hats at all times."
+    },
+    {
+      "description": "Missing PPE - worker not wearing gloves",
+      "location": "Right side operating machine",
+      "severity": "medium",
+      "recommendation": "Ensure all workers wear gloves when operating machinery."
+    },
+    {
+      "description": "Improper equipment usage - worker sitting in an inappropriate area",
+      "location": "Center near stacked items",
+      "severity": "medium",
+      "recommendation": "Reinforce training on appropriate working areas to prevent accidents."
+    }
+  ],
+  "locations": [
+    "Center left near machine",
+    "Right side operating machine",
+    "Center near stacked items"
+  ],
+  "severity": [
+    "medium",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats at all times.",
+    "Ensure all workers wear gloves when operating machinery.",
+    "Reinforce training on appropriate working areas to prevent accidents."
+  ],
+  "worker_count": 3,
+  "worker_positions": [
+    "Center left near machine",
+    "Center near stacked items",
+    "Right side operating machine"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_no_hat_1",
+      "features": "Seated, no hard hat, near center machine",
+      "violations": [
+        "0",
+        "2"
+      ]
+    },
+    {
+      "worker_id": "worker_no_gloves_2",
+      "features": "Standing, operating machine on right side, no gloves",
+      "violations": [
+        "1"
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0048_01m35s.jpg",
+  "timestamp": "2025-03-16T14:05:40.764921"
+}

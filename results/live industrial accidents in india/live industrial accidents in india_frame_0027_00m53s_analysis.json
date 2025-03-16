@@ -1,0 +1,46 @@
+{
+  "violations": [
+    "Worker without hard hat",
+    "Worker in close proximity to operational machinery without visible PPE",
+    "Potentially blocked emergency pathway"
+  ],
+  "locations": [
+    "Near the machinery in the center-left of the image",
+    "At the control panel of the large machine on the right",
+    "Pathway near the stacked parts in the center of the image"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear hard hats, gloves, and protective vests.",
+    "Ensure workers near operational machines use appropriate PPE, and maintain a safe distance.",
+    "Keep pathways clear of obstructions for quick emergency access."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "Worker bent over in the center-left near machinery",
+    "Worker standing at the control panel on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Wearing a blue shirt, no helmet",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_near_control_panel",
+      "features": "Standing at control panel, no helmet",
+      "violations": [
+        1
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0027_00m53s.jpg",
+  "timestamp": "2025-03-16T14:08:28.082406"
+}

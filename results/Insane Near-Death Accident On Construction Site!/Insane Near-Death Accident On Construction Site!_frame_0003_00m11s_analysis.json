@@ -1,0 +1,27 @@
+{
+  "violations": [
+    "Missing PPE: Workers may not be wearing hard hats, vests, and gloves",
+    "Improper equipment usage: Construction materials are not neatly organized",
+    "Blocked pathways: Obstructions in walkways and areas that could impede movement"
+  ],
+  "locations": [
+    "General construction area where workers are present",
+    "Near the center of the site where scattered materials are visible",
+    "Throughout the site where materials block clear pathways"
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers have and are using appropriate PPE such as hard hats and gloves",
+    "Organize construction materials properly for safe access and movement",
+    "Clear pathways and ensure emergency exits are unobstructed"
+  ],
+  "worker_count": 0,
+  "worker_positions": [],
+  "worker_identifiers": [],
+  "image_path": "data/frames/Insane Near-Death Accident On Construction Site!/Insane Near-Death Accident On Construction Site!_frame_0003_00m11s.jpg",
+  "timestamp": "2025-03-16T14:00:45.430736"
+}

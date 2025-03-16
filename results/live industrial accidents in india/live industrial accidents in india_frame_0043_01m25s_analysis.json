@@ -1,0 +1,44 @@
+{
+  "violations": [
+    "Missing PPE: Worker without hard hat and reflective vest.",
+    "Worker in a potentially dangerous position near machinery.",
+    "Improper stacking of heavy objects, posing a risk of collapse."
+  ],
+  "locations": [
+    "Near the large machinery on the right.",
+    "Near the machinery console in the center of the image.",
+    "In front of the machinery with stacked components."
+  ],
+  "severity": [
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Provide and enforce the use of hard hats and reflective vests.",
+    "Ensure safe distances from operating machinery and implement safety barriers.",
+    "Re-stack items securely or use appropriate storage equipment."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "One worker standing near the large machinery on the right.",
+    "Another worker seated near the center of the image, closer to the machinery console."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_blue_shirt_no_helmet",
+      "features": "Wearing a blue shirt and no helmet, standing near machinery",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_sitting_pink_shirt",
+      "features": "Wearing a pink shirt, seated near machinery console",
+      "violations": []
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0043_01m25s.jpg",
+  "timestamp": "2025-03-16T14:10:08.578842"
+}

@@ -1,0 +1,52 @@
+{
+  "violations": [
+    "No PPE (hard hats, vests, gloves) for multiple workers",
+    "Worker close to operating machinery without safety barriers",
+    "Improper stacking of materials (cylindrical items on floor)",
+    "No clear marking of emergency exits or pathways"
+  ],
+  "locations": [
+    "Center-left area near the machinery",
+    "Near machinery and stacked materials",
+    "Floor area with stacked cylindrical items",
+    "General lack of signage throughout the site"
+  ],
+  "severity": [
+    "high",
+    "high",
+    "medium",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers wear appropriate PPE at all times.",
+    "Install safety barriers and maintain a safe distance from machinery when operational.",
+    "Reorganize and secure materials safely to prevent tripping hazards.",
+    "Clearly mark and ensure pathways and emergency exits are visible and unobstructed."
+  ],
+  "worker_count": 2,
+  "worker_positions": [
+    "Worker near machinery on the left in a pink shirt",
+    "Worker kneeling near machinery on the right"
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_pink_shirt",
+      "features": "pink shirt, no visible PPE",
+      "violations": [
+        0,
+        1
+      ]
+    },
+    {
+      "worker_id": "worker_kneeling",
+      "features": "no visible PPE, near stacked materials",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0003_00m05s.jpg",
+  "timestamp": "2025-03-16T14:03:51.202498"
+}

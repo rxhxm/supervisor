@@ -1,0 +1,20 @@
+{
+  "violations": [
+    "Missing fall protection",
+    "Obstructed pathways with debris"
+  ],
+  "locations": [
+    "Near the edge of the upper level where workers are present",
+    "Ground level where construction materials are scattered"
+  ],
+  "severity": [
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers near edges have proper fall protection equipment like harnesses and guardrails.",
+    "Clear pathways of debris and organize materials to allow safe movement around the site."
+  ],
+  "image_path": "data/frames/con1/con1_frame_0009_00m17s.jpg",
+  "timestamp": "2025-03-16T01:43:08.058185"
+}

@@ -1,0 +1,54 @@
+{
+  "violations": [
+    "Missing PPE: No hard hats.",
+    "Missing PPE: No safety vests.",
+    "Workers appear to be in close proximity to operating machinery without visible barriers.",
+    "Potential blocked pathway due to stacked items near machinery."
+  ],
+  "locations": [
+    "Near the large machinery on the left and right sides of the image.",
+    "Central area where several workers are crouched around equipment.",
+    "Front center near stacked items beside the machine on the right."
+  ],
+  "severity": [
+    "high",
+    "medium",
+    "high",
+    "medium"
+  ],
+  "recommendations": [
+    "Ensure all workers are equipped with hard hats.",
+    "Provide and require high-visibility safety vests.",
+    "Establish and enforce safe distance protocols around operating machinery.",
+    "Clear pathways to ensure easy and safe worker movement."
+  ],
+  "worker_count": 5,
+  "worker_positions": [
+    "Two workers crouched near the large machinery on the left.",
+    "One worker standing in front of the machinery on the right.",
+    "One worker near a control panel on the far right.",
+    "One worker sitting on the floor near the central area."
+  ],
+  "worker_identifiers": [
+    {
+      "worker_id": "worker_white_shirt_1",
+      "features": "White shirt, crouched near machinery, no PPE",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "worker_id": "worker_blue_shirt_2",
+      "features": "Blue shirt, standing by control panel, no PPE",
+      "violations": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "image_path": "data/frames/live industrial accidents in india/live industrial accidents in india_frame_0052_01m43s.jpg",
+  "timestamp": "2025-03-16T14:11:52.765231"
+}
